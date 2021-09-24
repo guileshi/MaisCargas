@@ -19,9 +19,9 @@
     <!-- Navbar -->
     <header class="fixed-top">
         <div class="bg_navbar">
-            <div class="container">
+            <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg" role="navigation">
-                    <a href="#" class="nav-link navLogo"> 
+                    <a href="#" class="nav-link navLogo">
                         <!-- Logo / Texto -->
                         MaisCargas
                     </a>
@@ -73,20 +73,22 @@
             </div>
         </div>
 
-        <div class="container bg_breadcrumb">
+        <div class="container-fluid bg_breadcrumb">
             <div class="row">
                 <div class="col-3">
-                    Dashboard
+                    <span class="breadcrumb_title">
+                        Dashboard
+                    </span>
                 </div>
                 <div class="col-9">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="#">
-                                Lista de Fretes
+                            <a href="#" class="breadcrumb_items">
+                                <span>Lista de Fretes</span>
                             </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            <a href="#">
+                            <a href="#" class="breadcrumb_items">
                                 Dashboard
                             </a>
                         </li>
@@ -95,6 +97,43 @@
             </div>
         </div>
     </header>
+
+    <div class="container-fluid d-block justify-content-start">
+        <div class="row">
+            <div class="col-3 bg_collapse">
+                <section class="row">
+                        <div id="collapsePicture">
+                            <div class="col-12 d-flex justify-content-center">
+                                <picture>
+                                    <img src="img/caminhao2.jpg" alt="teste" height="150px" width="150px"
+                                        style="border-radius: 100px;">
+                                </picture>
+                            </div>
+                        </div>
+                        <div id="collapseName">
+                            <div class="col-12 d-flex justify-content-center">
+                                Guile L
+                            </div>
+                        </div>
+                </section>
+                <section id="collapseBar" class="row">
+                    <div class="col-12 collapseBar d-flex justify-content-center">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active"><i class="fas fa-columns"></i>
+                                Dashboard</a>
+                            <a href="#" class="list-group-item list-group-item-action">Perfil</a>
+                            <a href="#" class="list-group-item list-group-item-action">Veiculos</a>
+                            <a href="#" class="list-group-item list-group-item-action">Endereços</a>
+                            <a href="#" class="list-group-item list-group-item-action">Bancos</a>
+                            <a href="#" class="list-group-item list-group-item-action">Contatos</a>
+                            <a href="#" class="list-group-item list-group-item-action">Anunciar</a>
+                            <a href="#" class="list-group-item list-group-item-action">Desconectar</a>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
 
     <script src="js/jquery-min.js"></script>
     <script src="js/bootstrap.min.js"></script>

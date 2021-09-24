@@ -9,11 +9,11 @@
 
 
     --CorBase: #8B0000;
-    --fff: #fff;
-    --Branco: #F8F8F8;
-    --Cinza: #DBDBDB;
-    --CinzaEscuro: #6F6F6F;
-    --Preto: #343434;
+    --Corfff: #fff;
+    --CorBranco: #F8F8F8;
+    --CorCinza: #DBDBDB;
+    --CorCinzaEscuro: #6F6F6F;
+    --CorPreto: #343434;
 
 
     /* FIM DA SEÇÃO DE CORES */
@@ -21,8 +21,10 @@
     /* SEÇÃO DE FONTES */
 
 
-    --FonteGeral: 1em;
+    --Fonte16px: 1em;
     --Fonte24px: 1.5em;
+    --Fonte32px: 2em;
+
     --FonteBold: 700;
     --FonteSemiBold: 600;
     --FonteMedio: 500;
@@ -41,44 +43,124 @@
 }
 
 *{ /* CONFIGURAÇÕES GERAIS DO PROJETO */
-    font-family: Poppins;
+    font-family: Roboto, Poppins, Arial, sans-serif;
+}
+
+body{
+    padding-top: 136px;
 }
 
 /* CONFIGURAÇÕES DA NAVBAR */
 
-
 .bg_navbar{ /* Configurações Gerais */
     background-color: var(--CorBase);
-    font-size: var(--FonteGeral);
+    font-size: var(--Fonte16px);
     font-weight: var(--FonteNormal);
 }
 
-.bg_breadcrumb{ /* Configurações Breadcrumb */
-    background-color: var(--fff);
-    height: 80px;
-    font-weight: var(--FonteBold);
-    font-size: var(--Fonte24px);
-}
-
-.navbar-expand-lg{ 
+.navbar{ 
     height: 56px; /* Modificar o tamanho da navbar */
 }
 
 .navItemText{ /* Modifica os links clicáveis */
-    color: var(--fff);
+    color: var(--Corfff);
     padding: var(--Padding16px);
 }
 
 .navItemText:hover{ /* Hover dos links clicáveis */
-    color: var(--Cinza);
+    color: var(--CorCinza);
 }
 
 .navLogo{
-    color: var(--fff) !important;
-    font-size: calc(2 * var(--FonteGeral));
+    color: var(--Corfff) !important;
+    font-size: var(--Fonte32px);
     font-weight: var(--FonteBold);
     align-items: center;
 }
 
-
 /* FIM DAS CONFIGURAÇÕES DA NAVBAR */ 
+
+/* CONFIGURAÇÕES BREADCRUMB */
+
+.bg_breadcrumb{ /* Configurações Breadcrumb */
+    background-color: var(--Corfff);
+    height: 80px;
+    font-weight: var(--FonteBold);
+}
+
+.breadcrumb_title{ /* Texto acima da foto, abaixo do logo*/
+    color: var(--CorPreto);
+    font-size: var(--Fonte24px);
+}
+
+.breadcrumb_items{ /* Configurar os Itens do Breadcrumb */
+    color: var(--CorPreto);
+    font-size: var(--Fonte16px);
+    text-decoration: none;
+}
+
+.breadcrumb_items:hover{
+    text-decoration: none;
+    color: var(--CorCinzaEscuro);
+}
+
+.bg_breadcrumb .col-3, .col-9{
+    padding: 22px 0 22px 0;
+}
+
+/* FIM DAS CONFIGURAÇÕES DE BREADCRUMB */
+
+/* CONFIGURAÇÕES DA BARRA DE COLAPSO */
+
+#collapsePicture{ /* Foto do Usuario */
+    padding: 16px 0;
+}
+
+#collapseName{ /* Nome do Usuario */
+    padding: 16px 0;
+    font: var(--FonteNormal) var(--Fonte24px) Roboto, Poppins, sans-serif;
+}
+
+/* Configurações dos itens da lista */
+.list-group-item.active{
+    background-color: var(--CorBase);
+    border: none;
+}
+
+.list-group-item{
+    background-color: var(--CorCinza);
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+}
+
+.list-group-item:hover{
+    background-color: var(--CorBase);
+    color: var(--fff);
+}
+/* --- */
+
+.bg_collapse{
+    background-color: var(--CorCinza);
+}
+
+.bg_collapse a{
+    text-decoration: none;
+    width: 253px;
+    color: var(--CorPreto);
+}
+
+.bg_collapse a:hover{
+    color: var(--Corfff);
+}
+
+
+.list-group-item-action{
+    margin-bottom: 8px;
+}
+
+.fas{
+    padding: 12px auto 12px 16px;
+}
+
+/* FIM DAS CONFIGURAÇÕES DA BARRA DE COLAPSO */
