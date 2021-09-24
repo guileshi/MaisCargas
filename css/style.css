@@ -1,0 +1,84 @@
+/* Exportação Fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Exportação Fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    /* SEÇÃO DE CORES */
+
+
+    --CorBase: #8B0000;
+    --fff: #fff;
+    --Branco: #F8F8F8;
+    --Cinza: #DBDBDB;
+    --CinzaEscuro: #6F6F6F;
+    --Preto: #343434;
+
+
+    /* FIM DA SEÇÃO DE CORES */
+
+    /* SEÇÃO DE FONTES */
+
+
+    --FonteGeral: 1em;
+    --Fonte24px: 1.5em;
+    --FonteBold: 700;
+    --FonteSemiBold: 600;
+    --FonteMedio: 500;
+    --FonteNormal: 400;
+
+
+    /* FIM DA SEÇÃO DE FONTES */
+
+    /* SEÇÃO DE OUTROS */
+
+
+    --Padding16px: 1em;
+
+
+    /* FIM DA SEÇÃO DE OUTROS */
+}
+
+*{ /* CONFIGURAÇÕES GERAIS DO PROJETO */
+    font-family: Poppins;
+}
+
+/* CONFIGURAÇÕES DA NAVBAR */
+
+
+.bg_navbar{ /* Configurações Gerais */
+    background-color: var(--CorBase);
+    font-size: var(--FonteGeral);
+    font-weight: var(--FonteNormal);
+}
+
+.bg_breadcrumb{ /* Configurações Breadcrumb */
+    background-color: var(--fff);
+    height: 80px;
+    font-weight: var(--FonteBold);
+    font-size: var(--Fonte24px);
+}
+
+.navbar-expand-lg{ 
+    height: 56px; /* Modificar o tamanho da navbar */
+}
+
+.navItemText{ /* Modifica os links clicáveis */
+    color: var(--fff);
+    padding: var(--Padding16px);
+}
+
+.navItemText:hover{ /* Hover dos links clicáveis */
+    color: var(--Cinza);
+}
+
+.navLogo{
+    color: var(--fff) !important;
+    font-size: calc(2 * var(--FonteGeral));
+    font-weight: var(--FonteBold);
+    align-items: center;
+}
+
+
+/* FIM DAS CONFIGURAÇÕES DA NAVBAR */ 
