@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Cargas</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="fixed-top">
+        <div class="bg_navbar">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg" role="navigation">
+                    <a href="#" class="nav-link navLogo">
+                        <!-- Logo / Texto -->
+                        MaisCargas
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+                        aria-controls="menu" aria-expanded="false" aria-label="Menu colapso">
+                        <span class="navbar-toggler-icon text-dark"></span>
+                    </button>
+                    <div id="menuNav" class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Links -->
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">
+                                    <span class="navItemText">
+                                        Home
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="who-we-are.html" class="nav-link">
+                                    <span class="navItemText">
+                                        Quem Somos
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html#servicesScroll" class="nav-link">
+                                    <span class="navItemText">
+                                        Serviços
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="cotacao.html" class="nav-link">
+                                    <span class="navItemText">
+                                        Cotação
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact-us.html" class="nav-link">
+                                    <span class="navItemText">
+                                        Contato
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container-fluid bg_breadcrumb">
+            <div class="row">
+                <div class="col-3">
+                    <span class="breadcrumb_title breadcrumb_section">
+                        Perfil
+                    </span>
+                </div>
+                <div class="col-9">
+                    <ol class="breadcrumb justify-content-end breadcrumb_section">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="breadcrumb_items">
+                                <span>Lista de Fretes</span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="#" class="breadcrumb_items">
+                                Perfil
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid d-block justify-content-start">
+        <div class="row">
+            <div class="col-3 bg_collapse collapseBar_hide" id="collapseBar">
+                <section class="row">
+                    <div id="collapsePicture">
+                        <div class="col-12 d-flex justify-content-center">
+                            <picture>
+                                <img src="img/caminhao2.jpg" alt="teste" height="150px" width="150px"
+                                    style="border-radius: 100px;">
+                            </picture>
+                        </div>
+                    </div>
+                    <div id="collapseName">
+                        <div class="col-12 d-flex justify-content-center">
+                            Guile L
+                        </div>
+                    </div>
+                </section>
+                <section class="row" role="navigation">
+                    <div class="col-12 collapseBar d-flex justify-content-center">
+                        <div class="list-group">
+                            <a href="index.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-columns"></i>
+                                Dashboard</a>
+                            <a href="#" class="list-group-item list-group-item-action active"><i
+                                    class="fas fa-user"></i>
+                                Perfil</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-truck"></i>
+                                Veiculos</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>
+                                Endereços</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-dollar-sign"></i> Bancos</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-phone"></i>
+                                Contatos</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-truck-loading"></i> Anunciar</a>
+                            <a href="#" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-sign-out-alt"></i> Desconectar</a>
+                        </div>
+                </section>
+            </div>
+            <div class="col-9 bg_background">
+                <section class="bg_profile">
+                    <h2>
+                        PERFIL
+                    </h2>
+                    <form role="form" class="form-floating row d-flex" aria-label="Informações de Cotação">
+                        <div class="col-6 form-floating profileInput">
+                            <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme">
+                            <label for="nome" class="form-label">Nome</label>
+                        </div>
+                        <div class="col-6 form-floating profileInput">
+                            <input type="number" class="form-control" id="cpf-CNPJ" placeholder="Ex.: 123.456.789-10">
+                            <label for="cpf-CNPJ" class="form-label">CPF ou CNPJ</label>
+                        </div>
+                        <div class="col-6 form-floating profileInput">
+                            <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910">
+                            <label for="cnh" class="form-label">CNH</label>
+                        </div>
+                        <div class="col-6 form-floating profileInput">
+                            <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678">
+                            <label for="rntrc" class="form-label">RNTRC</label>
+                        </div>
+                        <div class="col-6 form-floating profileInput">
+                            <select class="form-select col-6 form-floating" id="rntrc-type">
+                                <option selected>Escolha o tipo de RNTRC</option>
+                                <option value="1">ETC</option>
+                                <option value="2">CTC</option>
+                                <option value="3">TAC</option>
+                            </select>
+                        </div>
+                        <div class="col-6 form-floating profileInput">
+                            <input type="date" class="form-control" id="val-rntrc" placeholder="Ex.: 08/27">
+                            <label for="val-rntrc" class="form-label">Validade RNTRC</label>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/my.js"></script>
+</body>
+
+</html>

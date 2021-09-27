@@ -30,24 +30,45 @@
     --FonteMedio: 500;
     --FonteNormal: 400;
 
+    --Roboto: Roboto, Poppins, Arial, sans-serif;
+    --Poppins: Poppins, Robot, Arial, sans-serif;
+
 
     /* FIM DA SEÇÃO DE FONTES */
 
     /* SEÇÃO DE OUTROS */
 
-
+    --Padding32px: 2em;
+    --Padding24px: 1.5em;
     --Padding16px: 1em;
+    --Padding12px: 0.750em;
+
+    --margin32px: 2em;
+    --margin24px: 1.5em;
+    --margin16px: 1em;
+    --margin12px: 0.750em;
 
 
     /* FIM DA SEÇÃO DE OUTROS */
 }
 
 *{ /* CONFIGURAÇÕES GERAIS DO PROJETO */
-    font-family: Roboto, Poppins, Arial, sans-serif;
+    font-family: var(--Roboto);
+    letter-spacing: 3% !important;
 }
 
 body{
     padding-top: 136px;
+}
+
+/* TITULOS / HEADERS */
+
+/* h1{
+
+} */
+
+h2{
+    font: var(--FonteBold) var(--Fonte32px) var(--Poppins);
 }
 
 /* CONFIGURAÇÕES DA NAVBAR */
@@ -90,7 +111,12 @@ body{
 
 .breadcrumb_title{ /* Texto acima da foto, abaixo do logo*/
     color: var(--CorPreto);
-    font-size: var(--Fonte24px);
+    font-size: var(--Fonte24px);   
+}
+
+.breadcrumb_section{
+    position: relative;
+    top: 50%;
 }
 
 .breadcrumb_items{ /* Configurar os Itens do Breadcrumb */
@@ -104,13 +130,15 @@ body{
     color: var(--CorCinzaEscuro);
 }
 
-.bg_breadcrumb .col-3, .col-9{
-    padding: 22px 0 22px 0;
-}
 
 /* FIM DAS CONFIGURAÇÕES DE BREADCRUMB */
 
 /* CONFIGURAÇÕES DA BARRA DE COLAPSO */
+
+/* .collapseBar_hide{
+    transition: all 1s ease;
+    margin-left: -250px;
+} */
 
 #collapsePicture{ /* Foto do Usuario */
     padding: 16px 0;
@@ -118,36 +146,44 @@ body{
 
 #collapseName{ /* Nome do Usuario */
     padding: 16px 0;
-    font: var(--FonteNormal) var(--Fonte24px) Roboto, Poppins, sans-serif;
+    font: var(--FonteNormal) var(--Fonte24px) var(--Roboto);
 }
 
 /* Configurações dos itens da lista */
-.list-group-item.active{
+
+section > .collapseBar .list-group-item.active{
     background-color: var(--CorBase);
     border: none;
 }
 
-.list-group-item{
-    background-color: var(--CorCinza);
+section > .collapseBar .list-group-item{
+    background-color: var(--CorBranco);
     height: 42px;
     border-radius: 5px;
     border: none;
 }
 
-.list-group-item:hover{
+section > .collapseBar .list-group-item:hover{
     background-color: var(--CorBase);
-    color: var(--fff);
+    color: var(--Corfff);
 }
+
+section > .collapseBar .list-group-item.active:hover{
+    color: var(--CorCinza);
+}
+
 /* --- */
 
 .bg_collapse{
-    background-color: var(--CorCinza);
+    background-color: var(--CorBranco);
 }
 
 .bg_collapse a{
     text-decoration: none;
     width: 253px;
     color: var(--CorPreto);
+
+    transition:  0.2s ease-out;
 }
 
 .bg_collapse a:hover{
@@ -160,7 +196,109 @@ body{
 }
 
 .fas{
-    padding: 12px auto 12px 16px;
+    padding: var(--Padding12px) auto var(--Padding12px) var(--Padding16px);
 }
 
 /* FIM DAS CONFIGURAÇÕES DA BARRA DE COLAPSO */
+
+
+/* CONFIGURAÇÕES DA SEÇÃO DE INFORMAÇÕES */
+
+.bg_background{ /* Background da parte das informações */
+    background-color: var(--CorCinza);
+    height: auto;
+    padding: 12px;
+    padding-bottom: 34px;
+}
+
+.bg-d-profile{ /* Background Dashboard Profile */
+    background-color: var(--Corfff);
+    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    border-radius: 4px;
+    height: 67.8%;
+}
+
+.bg-d-vehicles{
+    background-color: var(--Corfff);
+    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border-radius: 4px;
+    height: 33.33%;
+}
+
+.bg-d-adresses{
+    background-color: var(--Corfff);
+    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    margin-bottom: 12px;
+    border-radius: 4px;
+    height: 33.33%;
+}
+
+.bg-d-banks{
+    background-color: var(--Corfff);
+    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    border-radius: 4px;
+    height: 33.33%;
+    margin-bottom: 12px;
+}
+
+.bg-d-contacts{
+    background-color: var(--Corfff);
+    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    margin-top: 12px;
+    border-radius: 4px;
+    height: 33.33%;
+}
+
+/* --- */
+
+/* SEÇÃO DASHBOARD ITENS */
+
+.dashboard_items ul li{
+    border: none;
+    background-color: transparent;
+    padding-left: 0px;
+}
+
+.my_dataLabel{
+    font: var(--FonteBold) var(--Fonte16px) var(--Poppins);
+    color: var(--CorCinzaEscuro);
+    padding: 4px 0 4px 0;
+}
+
+.my_dataValue{
+    font: var(--FonteBold) var(--Fonte16px) var(--Poppins);
+    color: var(--CorPreto);
+    padding: 4px 0 8px 0;
+}
+
+.seeMoreBtn{
+    font: var(--FonteBold) var(--Fonte16px) var(--Roboto);
+    background-color: var(--CorBase);
+    border: 1px solid var(--CorBase);
+    color: var(--Corfff);
+    margin: var(--margin32px) var(--margin32px) var(--margin16px) 0;
+
+    transition: all 0.2s ease-out;
+}
+
+.seeMoreBtn:hover{
+    background: none;
+    color: var(--CorPreto);
+}
+
+/* --- */
+
+/* SEÇÃO DA PAGINA DE PERFIL */
+
+.bg_profile{
+    background-color: var(--Corfff);
+}
+
+.profileInput{
+    border: none;
+    background-color: var(--CorBranco);
+}
+
+/* --- */
