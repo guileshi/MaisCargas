@@ -1,63 +1,48 @@
 /* Exportação Fonte Poppins */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
 /* Exportação Fonte Roboto */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-:root{
+:root {
     /* SEÇÃO DE CORES */
-
-
     --CorBase: #8B0000;
     --Corfff: #fff;
     --CorBranco: #F8F8F8;
     --CorCinza: #DBDBDB;
     --CorCinzaEscuro: #6F6F6F;
     --CorPreto: #343434;
-
-
     /* FIM DA SEÇÃO DE CORES */
-
     /* SEÇÃO DE FONTES */
-
-
     --Fonte16px: 1em;
     --Fonte24px: 1.5em;
     --Fonte32px: 2em;
-
     --FonteBold: 700;
     --FonteSemiBold: 600;
     --FonteMedio: 500;
     --FonteNormal: 400;
-
     --Roboto: Roboto, Poppins, Arial, sans-serif;
     --Poppins: Poppins, Robot, Arial, sans-serif;
-
-
     /* FIM DA SEÇÃO DE FONTES */
-
     /* SEÇÃO DE OUTROS */
-
     --Padding32px: 2em;
     --Padding24px: 1.5em;
     --Padding16px: 1em;
     --Padding12px: 0.750em;
-
     --margin32px: 2em;
     --margin24px: 1.5em;
     --margin16px: 1em;
     --margin12px: 0.750em;
-
-
     /* FIM DA SEÇÃO DE OUTROS */
 }
 
-*{ /* CONFIGURAÇÕES GERAIS DO PROJETO */
+* {
+    /* CONFIGURAÇÕES GERAIS DO PROJETO */
     font-family: var(--Roboto);
     letter-spacing: 3% !important;
 }
 
-body{
+body {
     padding-top: 136px;
 }
 
@@ -67,223 +52,232 @@ body{
 
 } */
 
-h2{
+h2 {
     font: var(--FonteBold) var(--Fonte32px) var(--Poppins);
 }
 
 /* CONFIGURAÇÕES DA NAVBAR */
 
-.bg_navbar{ /* Configurações Gerais */
+.bg_navbar {
+    /* Configurações Gerais */
     background-color: var(--CorBase);
     font-size: var(--Fonte16px);
     font-weight: var(--FonteNormal);
 }
 
-.navbar{ 
-    height: 56px; /* Modificar o tamanho da navbar */
+.navbar {
+    height: 56px;
+    /* Modificar o tamanho da navbar */
 }
 
-.navItemText{ /* Modifica os links clicáveis */
+.navItemText {
+    /* Modifica os links clicáveis */
     color: var(--Corfff);
     padding: var(--Padding16px);
 }
 
-.navItemText:hover{ /* Hover dos links clicáveis */
+.navItemText:hover {
+    /* Hover dos links clicáveis */
     color: var(--CorCinza);
 }
 
-.navLogo{
+.navLogo {
     color: var(--Corfff) !important;
     font-size: var(--Fonte32px);
     font-weight: var(--FonteBold);
     align-items: center;
 }
 
-/* FIM DAS CONFIGURAÇÕES DA NAVBAR */ 
+/* FIM DAS CONFIGURAÇÕES DA NAVBAR */
 
 /* CONFIGURAÇÕES BREADCRUMB */
 
-.bg_breadcrumb{ /* Configurações Breadcrumb */
+.bg_breadcrumb {
+    /* Configurações Breadcrumb */
     background-color: var(--Corfff);
     height: 80px;
     font-weight: var(--FonteBold);
 }
 
-.breadcrumb_title{ /* Texto acima da foto, abaixo do logo*/
+.breadcrumb_title {
+    /* Texto acima da foto, abaixo do logo*/
     color: var(--CorPreto);
-    font-size: var(--Fonte24px);   
+    font-size: var(--Fonte24px);
 }
 
-.breadcrumb_section{
+.breadcrumb_section {
+    /* Centralizar a seção de Breadcrumb */
     position: relative;
     top: 50%;
 }
 
-.breadcrumb_items{ /* Configurar os Itens do Breadcrumb */
+.breadcrumb_items {
+    /* Configurar os Itens do Breadcrumb */
     color: var(--CorPreto);
     font-size: var(--Fonte16px);
     text-decoration: none;
 }
 
-.breadcrumb_items:hover{
+.breadcrumb_items:hover {
     text-decoration: none;
     color: var(--CorCinzaEscuro);
 }
-
 
 /* FIM DAS CONFIGURAÇÕES DE BREADCRUMB */
 
 /* CONFIGURAÇÕES DA BARRA DE COLAPSO */
 
-/* .collapseBar_hide{
-    transition: all 1s ease;
-    margin-left: -250px;
-} */
-
-#collapsePicture{ /* Foto do Usuario */
+#collapsePicture {
+    /* Foto do Usuario */
     padding: 16px 0;
 }
 
-#collapseName{ /* Nome do Usuario */
+#collapseName {
+    /* Nome do Usuario */
     padding: 16px 0;
     font: var(--FonteNormal) var(--Fonte24px) var(--Roboto);
 }
 
 /* Configurações dos itens da lista */
 
-section > .collapseBar .list-group-item.active{
+section>.collapseBar .list-group-item.active {
+    /* Configuração de Item Ativo */
     background-color: var(--CorBase);
     border: none;
 }
 
-section > .collapseBar .list-group-item{
+section>.collapseBar .list-group-item {
+    /* Configuração de itens inativos */
     background-color: var(--CorBranco);
     height: 42px;
     border-radius: 5px;
     border: none;
 }
 
-section > .collapseBar .list-group-item:hover{
+section>.collapseBar .list-group-item:hover {
     background-color: var(--CorBase);
     color: var(--Corfff);
 }
 
-section > .collapseBar .list-group-item.active:hover{
+section>.collapseBar .list-group-item.active:hover {
     color: var(--CorCinza);
 }
 
 /* --- */
 
-.bg_collapse{
+.bg_collapse {
+    /* Background do Colapso */
     background-color: var(--CorBranco);
 }
 
-.bg_collapse a{
+.bg_collapse a {
+    /* Configuração dos links do Colapso */
     text-decoration: none;
     width: 253px;
     color: var(--CorPreto);
-
-    transition:  0.2s ease-out;
+    transition: 0.2s ease-out;
 }
 
-.bg_collapse a:hover{
+.bg_collapse a:hover {
     color: var(--Corfff);
 }
 
-
-.list-group-item-action{
+.list-group-item-action {
     margin-bottom: 8px;
 }
 
-.fas{
+.fas {
+    /* Configuração dos Icones */
     padding: var(--Padding12px) auto var(--Padding12px) var(--Padding16px);
 }
 
-/* FIM DAS CONFIGURAÇÕES DA BARRA DE COLAPSO */
-
+/* --- */
 
 /* CONFIGURAÇÕES DA SEÇÃO DE INFORMAÇÕES */
 
-.bg_background{ /* Background da parte das informações */
+.bg_background {
+    /* Background da parte das informações */
     background-color: var(--CorCinza);
     height: auto;
     padding: 12px;
     padding-bottom: 34px;
 }
 
-.bg-d-profile{ /* Background Dashboard Profile */
+.bg-d-profile {
+    /* Background Dashboard Profile */
     background-color: var(--Corfff);
-    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    padding: var(--Padding16px) 0px 0px var(--Padding16px);
     border-radius: 4px;
-    height: 67.8%;
 }
 
-.bg-d-vehicles{
+.bg-d-vehicles {
+    /* Background Dashboard Veiculos */
     background-color: var(--Corfff);
-    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    padding: var(--Padding16px) 0px 0px var(--Padding16px);
     margin-bottom: 12px;
     border-radius: 4px;
     border-radius: 4px;
-    height: 33.33%;
 }
 
-.bg-d-adresses{
+.bg-d-adresses {
+    /* Background Dashboard Endereços */
     background-color: var(--Corfff);
-    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    padding: var(--Padding16px) 0px 0px var(--Padding16px);
     margin-bottom: 12px;
     border-radius: 4px;
-    height: 33.33%;
 }
 
-.bg-d-banks{
+.bg-d-banks {
+    /* Background Dashboard Bancos */
     background-color: var(--Corfff);
-    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    padding: var(--Padding16px) 0px 0px var(--Padding16px);
     border-radius: 4px;
-    height: 33.33%;
     margin-bottom: 12px;
 }
 
-.bg-d-contacts{
+.bg-d-contacts {
+    /* Background Dashboard Contatos */
     background-color: var(--Corfff);
-    padding: var(--Padding32px) 0px 0px var(--Padding16px);
+    padding: var(--Padding16px) 0px 0px var(--Padding16px);
     margin-top: 12px;
     border-radius: 4px;
-    height: 33.33%;
 }
 
 /* --- */
 
 /* SEÇÃO DASHBOARD ITENS */
 
-.dashboard_items ul li{
+.dashboard_items ul li {
     border: none;
     background-color: transparent;
     padding-left: 0px;
 }
 
-.my_dataLabel{
+.my_dataLabel {
+    /* Mudança dos textos na pagina de Dashboard - Label */
     font: var(--FonteBold) var(--Fonte16px) var(--Poppins);
     color: var(--CorCinzaEscuro);
     padding: 4px 0 4px 0;
 }
 
-.my_dataValue{
+.my_dataValue {
+    /* Mudança dos textos na pagina de Dashboard - Informações Fornecidas */
     font: var(--FonteBold) var(--Fonte16px) var(--Poppins);
     color: var(--CorPreto);
     padding: 4px 0 8px 0;
 }
 
-.seeMoreBtn{
+.seeMoreBtn {
+    /* Botão de VER MAIS */
     font: var(--FonteBold) var(--Fonte16px) var(--Roboto);
     background-color: var(--CorBase);
     border: 1px solid var(--CorBase);
     color: var(--Corfff);
-    margin: var(--margin32px) var(--margin32px) var(--margin16px) 0;
-
+    margin: 0 var(--margin32px) var(--margin16px) 0;
     transition: all 0.2s ease-out;
 }
 
-.seeMoreBtn:hover{
+.seeMoreBtn:hover {
     background: none;
     color: var(--CorPreto);
 }
@@ -292,13 +286,39 @@ section > .collapseBar .list-group-item.active:hover{
 
 /* SEÇÃO DA PAGINA DE PERFIL */
 
-.bg_profile{
+.bg_profile {
+    /* Background da pagina de Perfil */
     background-color: var(--Corfff);
+    padding: var(--Padding16px) var(--Padding16px) 0px var(--Padding16px);
+    border-radius: 4px;
 }
 
-.profileInput{
-    border: none;
+.bg_profile .form-label {
+    /* Modificar os labels dos formularios da pagina de perfil */
+    color: var(--CorCinzaEscuro);
+}
+
+.bg_profile .form-control {
+    /* Configurações do formato dos formularios */
+    border: none !important;
+    border-radius: 4px;
     background-color: var(--CorBranco);
+    color: var(--CorPreto);
+    margin: var(--margin16px) 0;
+}
+
+.editBtn {
+    /* Botão de EDITAR */
+    font-weight: var(--FonteBold);
+    background-color: var(--CorBase);
+    color: var(--Corfff);
+    border-radius: 4px;
+    margin: 32px 0 16px 0;
+}
+
+.editBtn:hover {
+    background: none;
+    color: var(--CorPreto);
 }
 
 /* --- */

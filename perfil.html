@@ -76,12 +76,12 @@
         <div class="container-fluid bg_breadcrumb">
             <div class="row">
                 <div class="col-3">
-                    <span class="breadcrumb_title breadcrumb_section">
+                    <span class="breadcrumb_title breadcrumb_section p-3">
                         Perfil
                     </span>
                 </div>
                 <div class="col-9">
-                    <ol class="breadcrumb justify-content-end breadcrumb_section">
+                    <ol class="breadcrumb justify-content-end breadcrumb_section p-1">
                         <li class="breadcrumb-item">
                             <a href="#" class="breadcrumb_items">
                                 <span>Lista de Fretes</span>
@@ -145,34 +145,41 @@
                     <h2>
                         PERFIL
                     </h2>
-                    <form role="form" class="form-floating row d-flex" aria-label="Informações de Cotação">
-                        <div class="col-6 form-floating profileInput">
-                            <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme">
-                            <label for="nome" class="form-label">Nome</label>
-                        </div>
-                        <div class="col-6 form-floating profileInput">
-                            <input type="number" class="form-control" id="cpf-CNPJ" placeholder="Ex.: 123.456.789-10">
-                            <label for="cpf-CNPJ" class="form-label">CPF ou CNPJ</label>
-                        </div>
-                        <div class="col-6 form-floating profileInput">
-                            <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910">
-                            <label for="cnh" class="form-label">CNH</label>
-                        </div>
-                        <div class="col-6 form-floating profileInput">
-                            <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678">
-                            <label for="rntrc" class="form-label">RNTRC</label>
-                        </div>
-                        <div class="col-6 form-floating profileInput">
-                            <select class="form-select col-6 form-floating" id="rntrc-type">
-                                <option selected>Escolha o tipo de RNTRC</option>
-                                <option value="1">ETC</option>
-                                <option value="2">CTC</option>
-                                <option value="3">TAC</option>
-                            </select>
-                        </div>
-                        <div class="col-6 form-floating profileInput">
-                            <input type="date" class="form-control" id="val-rntrc" placeholder="Ex.: 08/27">
-                            <label for="val-rntrc" class="form-label">Validade RNTRC</label>
+                    <form role="form" aria-label="Informações de Cotação">
+                        <div class="row d-flex">
+                            <div class="col-6 form-floating profileInput">
+                                <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme" required aria-required="true">
+                                <label for="nome" class="form-label p-4">Nome</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="number" class="form-control" id="cpfCNPJ" placeholder="Ex.: 123.456.789-10" required aria-required="true">
+                                <label for="cpfCNPJ" class="form-label p-4">CPF ou CNPJ</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910" required aria-required="true">
+                                <label for="cnh" class="form-label p-4">CNH</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678" required aria-required="true">
+                                <label for="rntrc" class="form-label p-4">RNTRC</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <select class="form-select col-6 form-floating form-control p-3" id="rntrc-type" required aria-required="true">
+                                    <option selected>Escolha o tipo de RNTRC</option>
+                                    <option value="1">ETC</option>
+                                    <option value="2">CTC</option>
+                                    <option value="3">TAC</option>
+                                </select>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="month" class="form-control" id="valRNTRC" placeholder="Ex.: Janeiro de 2029" required aria-required="true">
+                                <label for="valRNTRC" class="form-label p-4">Validade RNTRC</label>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn editBtn text-uppercase" role="button" type="button">
+                                    editar
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </section>
