@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="3" class="nav-link">
                                     <span class="navItemText">
                                         Contato
                                     </span>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-3">
                     <span class="breadcrumb_title breadcrumb_section p-3">
-                        Perfil
+                        Banco
                     </span>
                 </div>
                 <div class="col-9">
@@ -87,9 +87,14 @@
                                 <span>Lista de Fretes</span>
                             </a>
                         </li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href="contatos.html" class="breadcrumb_items">
+                                Contatos
+                            </a>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <a href="#" class="breadcrumb_items">
-                                Perfil
+                                Criar Contato
                             </a>
                         </li>
                     </ol>
@@ -122,16 +127,19 @@
                             <a href="dashboard.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-columns"></i>
                                 Dashboard</a>
-                            <a href="#" class="list-group-item list-group-item-action active"><i
+                            <a href="perfil.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-user"></i>
                                 Perfil</a>
-                            <a href="veiculos.html" class="list-group-item list-group-item-action"><i class="fas fa-truck"></i>
+                            <a href="veiculos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-truck"></i>
                                 Veiculos</a>
-                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>
+                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-home"></i>
                                 Endereços</a>
                             <a href="bancos.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-dollar-sign"></i> Bancos</a>
-                            <a href="contatos.html" class="list-group-item list-group-item-action"><i class="fas fa-phone"></i>
+                            <a href="contatos.html" class="list-group-item list-group-item-action active"><i
+                                    class="fas fa-phone"></i>
                                 Contatos</a>
                             <a href="anunciar.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-truck-loading"></i> Anunciar</a>
@@ -143,41 +151,39 @@
             <div class="col-9 bg_background">
                 <section class="bg_profile">
                     <h2>
-                        PERFIL
+                        ADICIONAR CONTATO
                     </h2>
                     <form role="form" aria-label="Informações de Cotação">
                         <div class="row d-flex">
                             <div class="col-6 form-floating profileInput">
-                                <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme" required aria-required="true">
-                                <label for="nome" class="form-label p-4">Nome</label>
+                                <input type="text" class="form-control" id="contact-name" name="contact-name"
+                                    placeholder="Ex.: Contato 1" required aria-required="true"
+                                    aria-labelledby="contact-name" aria-hidden="false">
+                                <label for="contact-name" class="form-label p-4 required">Nome</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cpfCNPJ" placeholder="Ex.: 123.456.789-10" required aria-required="true">
-                                <label for="cpfCNPJ" class="form-label p-4">CPF ou CNPJ</label>
+                                <input type="text" class="form-control" id="contact-contact" name="contact-contact"
+                                    placeholder="Ex.: (11) 9 1234-5678; email@exemplo.com; 1002-3456" required aria-required="true"
+                                    aria-labelledby="contact-contact" aria-hidden="false">
+                                <label for="contact-contact" class="form-label p-4 required">Contato</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910" required aria-required="true">
-                                <label for="cnh" class="form-label p-4">CNH</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678" required aria-required="true">
-                                <label for="rntrc" class="form-label p-4">RNTRC</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <select class="form-select col-6 form-floating form-control p-3" id="rntrc-type" required aria-required="true">
-                                    <option selected>Escolha o tipo de RNTRC</option>
-                                    <option value="1">ETC</option>
-                                    <option value="2">CTC</option>
-                                    <option value="3">TAC</option>
+                                <select class="form-select form-floating form-control p-3" id="contact-type"
+                                    name="contact-type" required aria-required="true">
+                                    <option selected>Tipo de Contato</option>
+                                    <option value="1" class="text-capitalize">E-Mail</option>
+                                    <option value="2" class="text-capitalize">Celular</option>
+                                    <option value="3" class="text-capitalize">Telefone</option>
                                 </select>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="month" class="form-control" id="valRNTRC" placeholder="Ex.: Janeiro de 2029" required aria-required="true">
-                                <label for="valRNTRC" class="form-label p-4">Validade RNTRC</label>
+                                <input type="text" class="form-control" id="contact-obs" name="contact-obs"
+                                    placeholder="Ex.: Numero usado somente para contato com a transportadora" aria-labelledby="contact-obs" aria-hidden="false">
+                                <label for="contact-obs" class="form-label p-4">Observações</label>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark editBtn text-uppercase" style="width: auto;" role="button" type="submit">
-                                    editar
+                            <div class="d-flex justify-content-end ms-auto" style="width: auto;">
+                                <button class="btn btn-danger editBtn text-uppercase" role="button" type="submit">
+                                    criar contato
                                 </button>
                             </div>
                         </div>

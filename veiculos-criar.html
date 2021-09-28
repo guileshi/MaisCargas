@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-3">
                     <span class="breadcrumb_title breadcrumb_section p-3">
-                        Perfil
+                        Veículos
                     </span>
                 </div>
                 <div class="col-9">
@@ -88,8 +88,13 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
+                            <a href="veiculos.html" class="breadcrumb_items">
+                                Veículos
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
                             <a href="#" class="breadcrumb_items">
-                                Perfil
+                                Criar Veículo
                             </a>
                         </li>
                     </ol>
@@ -122,12 +127,14 @@
                             <a href="dashboard.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-columns"></i>
                                 Dashboard</a>
-                            <a href="#" class="list-group-item list-group-item-action active"><i
+                            <a href="perfil.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-user"></i>
                                 Perfil</a>
-                            <a href="veiculos.html" class="list-group-item list-group-item-action"><i class="fas fa-truck"></i>
+                            <a href="veiculos.html" class="list-group-item list-group-item-action active"><i
+                                    class="fas fa-truck"></i>
                                 Veiculos</a>
-                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>
+                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-home"></i>
                                 Endereços</a>
                             <a href="bancos.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-dollar-sign"></i> Bancos</a>
@@ -143,41 +150,69 @@
             <div class="col-9 bg_background">
                 <section class="bg_profile">
                     <h2>
-                        PERFIL
+                        ADICIONAR VEÍCULO
                     </h2>
                     <form role="form" aria-label="Informações de Cotação">
                         <div class="row d-flex">
                             <div class="col-6 form-floating profileInput">
-                                <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme" required aria-required="true">
-                                <label for="nome" class="form-label p-4">Nome</label>
+                                <input type="text" class="form-control" id="vehicle-sign" name="vehicle-sign"
+                                    placeholder="Ex.: AWP-1234" required aria-required="true"
+                                    aria-labelledby="vehicle-sign" aria-hidden="false">
+                                <label for="nome" class="form-label p-4 required">Placa</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cpfCNPJ" placeholder="Ex.: 123.456.789-10" required aria-required="true">
-                                <label for="cpfCNPJ" class="form-label p-4">CPF ou CNPJ</label>
+                                <input type="number" class="form-control" id="vehicle-renavam" name="vehicle-renavam"
+                                    placeholder="Ex.: 12345678910" required aria-required="true" aria-labelledby="
+                                    vehicle-renavam" aria-hidden="false">
+                                <label for="cpfCNPJ" class="form-label p-4 required">Renavam</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910" required aria-required="true">
-                                <label for="cnh" class="form-label p-4">CNH</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678" required aria-required="true">
-                                <label for="rntrc" class="form-label p-4">RNTRC</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <select class="form-select col-6 form-floating form-control p-3" id="rntrc-type" required aria-required="true">
-                                    <option selected>Escolha o tipo de RNTRC</option>
-                                    <option value="1">ETC</option>
-                                    <option value="2">CTC</option>
-                                    <option value="3">TAC</option>
+                                <select class="form-select col-6 form-floating form-control p-3" id="vehicle-brand"
+                                    name="vehicle-brand" required aria-required="true" aria-labelledby="
+                                    vehicle-brand" aria-hidden="false">
+                                    <option selected>Marca</option>
+                                    <option value="1">Agrale</option>
+                                    <option value="2">Chevrolet</option>
+                                    <option value="3">Citroen</option>
                                 </select>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="month" class="form-control" id="valRNTRC" placeholder="Ex.: Janeiro de 2029" required aria-required="true">
-                                <label for="valRNTRC" class="form-label p-4">Validade RNTRC</label>
+                                <input type="text" class="form-control" id="vehicle-model" name="vehicle-model"
+                                    placeholder="Ex.: Tucson 2012 SL" required aria-required="true" aria-labelledby="
+                                    vehicle-model" aria-hidden="false">
+                                <label for="rntrc" class="form-label p-4 required">Modelo</label>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark editBtn text-uppercase" style="width: auto;" role="button" type="submit">
-                                    editar
+                            <div class="col-6 form-floating profileInput">
+                                <select class="form-select col-6 form-floating form-control p-3" id="vehicle-type"
+                                    name="vehicle-type" required aria-required="true" aria-labelledby="
+                                    vehicle-type" aria-hidden="false">
+                                    <option selected>Tipo</option>
+                                    <option value="1">3/4</option>
+                                    <option value="2">Doblô</option>
+                                    <option value="3">Fiorino</option>
+                                </select>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <select class="form-select col-6 form-floating form-control p-3" id="vehicle-bodywork"
+                                    name="vehicle-bodywork" required aria-required="true" aria-labelledby="
+                                    vehicle-bodywork" aria-hidden="false">
+                                    <option selected>Carroceria</option>
+                                    <option value="1">Tanque</option>
+                                    <option value="2">Basculante</option>
+                                    <option value="3">Báu</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-check-input" type="checkbox" value="" id="vehicle-isTracked"
+                                    aria-required="false" aria-labelledby="
+                                vehicle-bodywork" aria-hidden="false">
+                                <label class="form-check-label" for="vehicle-isTracked">
+                                    Veículo Rastreado?
+                                </label>
+                            </div>
+                            <div class="d-flex justify-content-end ms-auto" style="width: auto;">
+                                <button class="btn btn-dark editBtn text-uppercase" role="button" type="submit">
+                                    criar veículo
                                 </button>
                             </div>
                         </div>

@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="3" class="nav-link">
                                     <span class="navItemText">
                                         Contato
                                     </span>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-3">
                     <span class="breadcrumb_title breadcrumb_section p-3">
-                        Perfil
+                        Anunciar
                     </span>
                 </div>
                 <div class="col-9">
@@ -89,7 +89,7 @@
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <a href="#" class="breadcrumb_items">
-                                Perfil
+                                Anunciar
                             </a>
                         </li>
                     </ol>
@@ -119,21 +119,25 @@
                 <section class="row" role="navigation">
                     <div class="col-12 collapseBar d-flex justify-content-center">
                         <div class="list-group">
+                            <!-- Barra de Navegação ao lado -->
                             <a href="dashboard.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-columns"></i>
                                 Dashboard</a>
-                            <a href="#" class="list-group-item list-group-item-action active"><i
+                            <a href="perfil.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-user"></i>
                                 Perfil</a>
-                            <a href="veiculos.html" class="list-group-item list-group-item-action"><i class="fas fa-truck"></i>
+                            <a href="veiculos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-truck"></i>
                                 Veiculos</a>
-                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>
+                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-home"></i>
                                 Endereços</a>
                             <a href="bancos.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-dollar-sign"></i> Bancos</a>
-                            <a href="contatos.html" class="list-group-item list-group-item-action"><i class="fas fa-phone"></i>
+                            <a href="contatos.html" class="list-group-item list-group-item-action"><i
+                                    class="fas fa-phone"></i>
                                 Contatos</a>
-                            <a href="anunciar.html" class="list-group-item list-group-item-action"><i
+                            <a href="anunciar.html" class="list-group-item list-group-item-action active"><i
                                     class="fas fa-truck-loading"></i> Anunciar</a>
                             <a href="#" class="list-group-item list-group-item-action"><i
                                     class="fas fa-sign-out-alt"></i> Desconectar</a>
@@ -143,45 +147,91 @@
             <div class="col-9 bg_background">
                 <section class="bg_profile">
                     <h2>
-                        PERFIL
+                        ANUNCIAR
                     </h2>
-                    <form role="form" aria-label="Informações de Cotação">
-                        <div class="row d-flex">
-                            <div class="col-6 form-floating profileInput">
-                                <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme" required aria-required="true">
-                                <label for="nome" class="form-label p-4">Nome</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cpfCNPJ" placeholder="Ex.: 123.456.789-10" required aria-required="true">
-                                <label for="cpfCNPJ" class="form-label p-4">CPF ou CNPJ</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910" required aria-required="true">
-                                <label for="cnh" class="form-label p-4">CNH</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678" required aria-required="true">
-                                <label for="rntrc" class="form-label p-4">RNTRC</label>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <select class="form-select col-6 form-floating form-control p-3" id="rntrc-type" required aria-required="true">
-                                    <option selected>Escolha o tipo de RNTRC</option>
-                                    <option value="1">ETC</option>
-                                    <option value="2">CTC</option>
-                                    <option value="3">TAC</option>
-                                </select>
-                            </div>
-                            <div class="col-6 form-floating profileInput">
-                                <input type="month" class="form-control" id="valRNTRC" placeholder="Ex.: Janeiro de 2029" required aria-required="true">
-                                <label for="valRNTRC" class="form-label p-4">Validade RNTRC</label>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark editBtn text-uppercase" style="width: auto;" role="button" type="submit">
-                                    editar
+                    <div class="col-12">
+                        <div class="bg_Items">
+                            <ul class="list-group list-group-horizontal">
+                                <!-- Lista Label -->
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    Caminhão
+                                </li>
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    Peso
+                                </li>
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    dimensões
+                                </li>
+                            </ul>
+
+                            <ul class="list-group list-group-horizontal">
+                                <!-- Lista de Informações fornecidas pelos Inputs -->
+                                <li class="list-group-item list-value w-25 text-uppercase">
+                                    AWP-1234
+                                </li>
+                                <li class="list-group-item list-value w-25 announce-weight">
+                                    1000
+                                </li>
+                                <li class="list-group-item list-value w-25 announce-meter">
+                                    30 x 40 x 80 x
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-end list-buttons">
+                                <button class="btn btn-dark itemEditBtn text-uppercase" role="button" type="button">
+                                    <!-- Botão de Editar -->
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger itemRemoveBtn btn-danger text-uppercase" role="button" type="button">
+                                    <!-- Botão de Remover -->
+                                    <i class="fas fa-times"></i>
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="bg_Items">
+                            <ul class="list-group list-group-horizontal">
+                                <!-- Lista Label -->
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    Caminhão
+                                </li>
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    Peso
+                                </li>
+                                <li class="list-group-item list-label w-25 text-uppercase">
+                                    Dimensões
+                                </li>
+                            </ul>
+
+                            <ul class="list-group list-group-horizontal">
+                                <!-- Lista de Informações fornecidas pelos Inputs -->
+                                <li class="list-group-item list-value w-25 text-uppercase">
+                                    AWP-1234
+                                </li>
+                                <li class="list-group-item list-value w-25 announce-weight">
+                                    800
+                                </li>
+                                <li class="list-group-item list-value w-25 announce-meter">
+                                    10 x 20 x 30 x
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-end list-buttons">
+                                <button class="btn btn-dark itemEditBtn text-uppercase" role="button" type="button">
+                                    <!-- Botão de Editar -->
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger itemRemoveBtn text-uppercase" role="button" type="button">
+                                    <!-- Botão de Remover -->
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="anunciar-criar.html" class="btn btn-danger editBtn text-uppercase" role="button" type="button">
+                            anunciar veículo
+                        </a>
+                    </div>
                 </section>
             </div>
         </div>

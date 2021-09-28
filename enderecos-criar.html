@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="3" class="nav-link">
                                     <span class="navItemText">
                                         Contato
                                     </span>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-3">
                     <span class="breadcrumb_title breadcrumb_section p-3">
-                        Perfil
+                        Endereço
                     </span>
                 </div>
                 <div class="col-9">
@@ -87,9 +87,14 @@
                                 <span>Lista de Fretes</span>
                             </a>
                         </li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href="bancos.html" class="breadcrumb_items">
+                                Endereço
+                            </a>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <a href="#" class="breadcrumb_items">
-                                Perfil
+                                Criar Endereços
                             </a>
                         </li>
                     </ol>
@@ -122,12 +127,12 @@
                             <a href="dashboard.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-columns"></i>
                                 Dashboard</a>
-                            <a href="#" class="list-group-item list-group-item-action active"><i
+                            <a href="perfil.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-user"></i>
                                 Perfil</a>
                             <a href="veiculos.html" class="list-group-item list-group-item-action"><i class="fas fa-truck"></i>
                                 Veiculos</a>
-                            <a href="enderecos.html" class="list-group-item list-group-item-action"><i class="fas fa-home"></i>
+                            <a href="enderecos.html" class="list-group-item list-group-item-action active"><i class="fas fa-home"></i>
                                 Endereços</a>
                             <a href="bancos.html" class="list-group-item list-group-item-action"><i
                                     class="fas fa-dollar-sign"></i> Bancos</a>
@@ -143,41 +148,53 @@
             <div class="col-9 bg_background">
                 <section class="bg_profile">
                     <h2>
-                        PERFIL
+                        ADICIONAR ENDEREÇO
                     </h2>
                     <form role="form" aria-label="Informações de Cotação">
                         <div class="row d-flex">
                             <div class="col-6 form-floating profileInput">
-                                <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Guilherme" required aria-required="true">
-                                <label for="nome" class="form-label p-4">Nome</label>
+                                <input type="text" class="form-control" id="adress-name" name="adress-name" placeholder="Ex.: Endereço 1" required aria-required="true" aria-labelledby="adress-name"
+                                aria-hidden="false">
+                                <label for="adress-name" class="form-label p-4 required">Nome</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cpfCNPJ" placeholder="Ex.: 123.456.789-10" required aria-required="true">
-                                <label for="cpfCNPJ" class="form-label p-4">CPF ou CNPJ</label>
+                                <input type="number" class="form-control" id="adress-cep" name="adress-cep" placeholder="Ex.: 12345-678" required aria-required="true" aria-labelledby="adress-cep"
+                                aria-hidden="false">
+                                <label for="adress-cep" class="form-label p-4 required">CEP</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="cnh" placeholder="Ex.: 12345678910" required aria-required="true">
-                                <label for="cnh" class="form-label p-4">CNH</label>
+                                <input type="text" class="form-control" id="adress-road" name="adress-road" placeholder="Ex.: Rua Exemplo" required aria-required="true" aria-labelledby="adress-road"
+                                aria-hidden="false">
+                                <label for="adress-road" class="form-label p-4 required">Rua</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="number" class="form-control" id="rntrc" placeholder="Ex.: 12345678" required aria-required="true">
-                                <label for="rntrc" class="form-label p-4">RNTRC</label>
+                                <input type="number" class="form-control" id="adress-number" name="adress-number" placeholder="Ex.: 49" aria-required="false" aria-labelledby="adress-number"
+                                aria-hidden="false">
+                                <label for="adress-number" class="form-label p-4">Número</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <select class="form-select col-6 form-floating form-control p-3" id="rntrc-type" required aria-required="true">
-                                    <option selected>Escolha o tipo de RNTRC</option>
-                                    <option value="1">ETC</option>
-                                    <option value="2">CTC</option>
-                                    <option value="3">TAC</option>
-                                </select>
+                                <input type="text" class="form-control" id="adress-complement" name="adress-complement" placeholder="Ex.: Em frente à praça"aria-required="false" aria-labelledby="adress-complement"
+                                aria-hidden="false">
+                                <label for="adress-complement" class="form-label p-4">Complemento</label>
                             </div>
                             <div class="col-6 form-floating profileInput">
-                                <input type="month" class="form-control" id="valRNTRC" placeholder="Ex.: Janeiro de 2029" required aria-required="true">
-                                <label for="valRNTRC" class="form-label p-4">Validade RNTRC</label>
+                                <input type="text" class="form-control" id="adress-district" name="adress-district" placeholder="Ex.: Parque Novo Mundo" required aria-required="true" aria-labelledby="adress-district"
+                                aria-hidden="false">
+                                <label for="adress-district" class="form-label p-4 required">Bairro</label>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-dark editBtn text-uppercase" style="width: auto;" role="button" type="submit">
-                                    editar
+                            <div class="col-6 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-city" name="adress-city" placeholder="Ex.: São Paulo" required aria-required="true" aria-labelledby="adress-city"
+                                aria-hidden="false">
+                                <label for="adress-city" class="form-label p-4 required">Cidade</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-state" name="adress-state" placeholder="Ex.: São Paulo" required aria-required="true" aria-labelledby="adress-state"
+                                aria-hidden="false">
+                                <label for="adress-state" class="form-label p-4 required">Estado</label>
+                            </div>
+                            <div class="d-flex justify-content-end ms-auto" style="width: auto;">
+                                <button class="btn btn-danger editBtn text-uppercase" role="button" type="submit">
+                                    criar endereço
                                 </button>
                             </div>
                         </div>
