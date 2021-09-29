@@ -45,6 +45,7 @@
 
 body {
     padding-top: 136px;
+    background-color: var(--CorCinza);
 }
 
 /* TITULOS / HEADERS */
@@ -63,11 +64,11 @@ h2 {
     pointer-events: none;
 }
 
-.text-muted{
+.text-muted {
     font-size: var(--Fonte12px);
 }
 
-.required::after{
+.required::after {
     content: ' *';
     color: var(--CorBase);
 }
@@ -150,107 +151,160 @@ h2 {
 
 /* CONFIGURAÇÕES DA BARRA DE COLAPSO */
 
-#collapsePicture {
-    /* Foto do Usuario */
-    padding: 16px 0;
-}
-
-#collapseName {
-    /* Nome do Usuario */
-    padding-bottom: 16px;
-    font: var(--FonteNormal) var(--Fonte24px) var(--Roboto);
-}
-
-.cam-icon{
-    /* Box de icone da Camera na Foto*/
-    background-color: var(--CorBranco);
-    position: relative;
-    left: 60%;
-    bottom: 12%;
-    height: 30px;
-    width: 30px;
-    border-radius: 20px;
-}
-
-#collapsePicture picture a{
-    transition: all 0.5s;
-}
-
-#collapsePicture picture a:hover{
-    filter: grayscale(80%);
-    transition: all 0.5s;
-}
-
-#collapsePicture a{
-    color: var(--CorPreto);
-    text-decoration: none;
-}
-
-#collapsePicture a i:hover{
-    color: var(--CorCinzaEscuro);
-}
-
-.cam-icon i{
-    /* Icone de Camera na Foto */
-    color: var(--CorPreto);
-    position: relative;
-    top: 15%;
-    right: 15%;
-}
-
 /* Configurações dos itens da lista */
 
-section>.collapseBar .list-group-item.active {
-    /* Configuração de Item Ativo */
-    font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins);
-    background-color: var(--CorBase);
-    border: none;
+.nav-sidebar ul { /* Retirar margens da lista */
+    margin: 0;
+    padding: 0;
 }
 
-section>.collapseBar .list-group-item {
-    /* Configuração de itens inativos */
-    font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins);
+.nav-sidebar ul li { /* Retirar as bullets da lista */
+    list-style: none;
+}
+
+ /* Barra lateral */
+.sideBar{ /* Diminuir o tamanho quando esta colapsada */
+    position: fixed;
+    z-index: 1;
+    width: 4%;
     background-color: var(--CorBranco);
-    height: 42px;
-    border-radius: 5px;
-    border: none;
+    transition: all 0.5s ease;
+    height: 100%;
+    overflow-x: hidden;
 }
-
-section>.collapseBar .list-group-item:hover {
-    background-color: var(--CorBase);
-    color: var(--Corfff);
+.sideBar.noCollapse{ /* Aumentar o tamanho quando não está colapsada */
+    width: 20%;
 }
+ /* --- */
 
-section>.collapseBar .list-group-item.active:hover {
-    color: var(--CorCinza);
+ /* Configurações dos itens ativos da barra lateral*/
+.sideBar.noCollapse .sidebar-item.active { /* Configurações quando a barra não está colapsada*/
+    margin: 4px 0 !important;
+    position: relative !important;
+    top: 5px !important;
+    left: 0 !important;
+    width: auto !important;
+    background-color: var(--CorBase) !important;
+    color: var(--Corfff) !important;
+    line-height: 25px !important;
+    padding-left: 20px !important;
+    transition: all 0.2s !important;
 }
+.sidebar-item.active { /* Configuração quando a barra está colapsada */
+    position: relative !important;
+    top: 5px !important;
+    display: flex !important;
+    background-color: var(--CorBase) !important;
+    font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins) !important;
+    color: var(--Corfff) !important;
+    border-radius: 4px !important;
+    border: none !important;
+    transition: color 0.2s ease !important;
+    line-height: 25px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+.sideBar.noCollapse .sidebar-item.active:hover { /* Hover da barra não colapsada */
+    border: 1px solid var(--CorBase) !important;
+    background-color: var(--CorBase) !important;
+    color: var(--CorCinza) !important;
+    box-shadow: 1px 4px 10px #00000033;
+}
+ /* --- */
 
-/* --- */
-
-.bg_collapse {
-    /* Background do Colapso */
+ /* Configurações dos itens da barra lateral */
+.sideBar .sidebar-item { /* Configuração quando a barra não está colapsada */
+    position: relative;
+    top: 5px;
+    display: flex;
     background-color: var(--CorBranco);
-}
-
-.collapseBar a {
-    /* Configuração dos links do Colapso */
-    text-decoration: none;
-    width: 253px;
+    font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins);
     color: var(--CorPreto);
-    transition: 0.2s ease-out;
+    border-radius: 4px;
+    border: none;
+    transition: color 0.2s ease;
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.collapseBar a:hover {
+.sidebar-item:hover {
+    background-color: var(--CorBase);
     color: var(--Corfff);
+    box-shadow: 1px 4px 10px #00000033;
 }
 
-.list-group-item-action {
-    margin-bottom: 8px;
+.sideBar.noCollapse .sidebar-item{ /* Configuração quando a barra está colapsada */
+    margin: 4px 0;
+    position: relative;
+    width: auto;
+    left: 0px;
+    display: flex;
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+ /* --- */
+
+ /* Configurações dos textos da barra lateral */
+.sideBar.noCollapse .nav-sidebar .sidebar-text{ /* Configuração quando a barra não está colapsada */
+    position: relative;
+    opacity: 1;
+    transition: all 0.5 ease;
 }
 
-.fas {
-    /* Configuração dos Icones */
-    padding: var(--Padding12px) auto var(--Padding12px) var(--Padding16px);
+.sideBar .nav-sidebar .sidebar-text{ /* Configuração quando a barra está colapsada */
+    position: absolute;
+    opacity: 0;
+}
+ /* --- */
+
+.sideBar .nav-sidebar .sidebar-icon{ /* Configuração dos icones quando a barra está colapsada */
+    position: relative;
+    padding: 5px;
+}
+ /* --- */ 
+
+ /* Configurações do perfil da barra lateral */
+.sideBar.noCollapse .profile .profile-picture{ /* Configuração da foto quando a barra não está colapsada */
+    position: relative;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sideBar .profile .profile-picture{ /* Configuração da foto quando a barra está colapsada */
+    /* Fazer com que a foto suma quando a barra estiver colapsada */
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+}
+
+.sideBar.noCollapse .profile .profile-name{ /* Configuração do nome quando a barra não está colapsada */
+    position: relative;
+    top: 0;
+    left: 0;
+    color: var(--CorPreto);
+    font: var(--FonteSemiBold) var(--Fonte24px) var(--Poppins);
+    padding-bottom: 8px;
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.sideBar .profile .profile-name{ /* Configuração do nome quando a barra está colapsada */
+    /* Fazer com que a foto suma quando a barra estiver colapsada */
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
 }
 
 /* --- */
@@ -435,15 +489,24 @@ section>.collapseBar .list-group-item.active:hover {
     justify-content: center;
     align-items: center;
     border: 1px solid transparent;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.itemRemoveBtn:hover { /* Hover do botão de excluir (x) */
+.bg_Items:hover .list-buttons .itemRemoveBtn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.itemRemoveBtn:hover {
+    /* Hover do botão de excluir (x) */
     background-color: var(--CorBase);
     color: var(--Corfff);
     border: 1px solid var(--CorPreto);
 }
 
-.itemEditBtn { /* Configuração do botão de editar (pencil) */
+.itemEditBtn {
+    /* Configuração do botão de editar (pencil) */
     font-weight: var(--FonteSemiBold);
     background-color: transparent;
     color: var(--CorPreto);
@@ -454,21 +517,30 @@ section>.collapseBar .list-group-item.active:hover {
     justify-content: center;
     align-items: center;
     border: 1px solid transparent;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.itemEditBtn:hover { /* Hover do botão de editar (pencil) */
+.bg_Items:hover .list-buttons .itemEditBtn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.itemEditBtn:hover {
+    /* Hover do botão de editar (pencil) */
     background-color: var(--CorPreto);
     color: var(--Corfff);
     border: 1px solid var(--CorPreto);
 }
 
-.list-buttons { /* Configuração para deixar os botões alinhados com a caixa */
+.list-buttons {
+    /* Configuração para deixar os botões alinhados com a caixa */
     margin-top: -56px;
 }
 
- /* Configuração unica da seção de anunciar */
+/* Configuração unica da seção de anunciar */
 
-.announce-weight::after{
+.announce-weight::after {
     content: "kg";
     color: var(--CorPreto);
 }

@@ -1,9 +1,4 @@
-// $(function () {
-//     $(".bg_Items").hover(function () {
-//         $(this).toggleClass('bg_ItemsHover bg_Items');
-//     });
-// });
-
+// Função para aparecer o icone na foto quando o mouse estiver por cima
 $(function(){
     $('#myPicture').hover(function(){
         console.log("Hovering")
@@ -11,9 +6,8 @@ $(function(){
     })
 })
 
-// $(function () {
-//     $(".bg_Items").hover(function () {
-//         $('.list-buttons').toggleClass('buttons-hide buttons-unhide');
-//     });
-// });
-
+$(function(){
+    $('.sideBar').hover(function(){
+        $(this).toggleClass('noCollapse')
+    })
+})
