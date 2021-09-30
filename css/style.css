@@ -37,16 +37,53 @@
     /* FIM DA SEÇÃO DE OUTROS */
 }
 
+/* CONFIGURAÇÕES GERAIS DO PROJETO */
+
 * {
-    /* CONFIGURAÇÕES GERAIS DO PROJETO */
+    /* Configurações gerais */
+    margin: 0;
+    padding: 0;
     font-family: var(--Roboto);
-    letter-spacing: 3% !important;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    padding-top: 136px;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 56px;
     background-color: var(--CorCinza);
 }
+
+/* SCROLL */
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--CorPreto) var(--CorBranco);
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--CorBranco);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--CorPreto);
+    border-radius: 12px;
+    border: 3px solid var(--CorBranco);
+}
+
+/* --- */
 
 /* TITULOS / HEADERS */
 
@@ -73,18 +110,64 @@ h2 {
     color: var(--CorBase);
 }
 
+@media only screen and (max-width: 991px) {
+    .main-content {
+        width: calc(100% - 32px);
+        left: 20px;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .main-content {
+        position: relative;
+        width: calc(100% - 80px);
+        left: 38px;
+        transition: all 0.5s ease;
+    }
+}
+
+.sideBar.noCollapse~.main-content {
+    width: calc(100% - 250px);
+    left: 124px;
+}
+
+/* --- */
+
 /* CONFIGURAÇÕES DA NAVBAR */
 
 .bg_navbar {
     /* Configurações Gerais */
     background-color: var(--CorBase);
-    font-size: var(--Fonte16px);
-    font-weight: var(--FonteNormal);
+}
+
+.navbar-brand {
+    padding: 0 0 0 16px;
+    margin: 0;
+    color: var(--Corfff) !important;
+    font-size: var(--Fonte32px) !important;
+    font-weight: var(--FonteBold) !important;
 }
 
 .navbar {
     height: 56px;
     /* Modificar o tamanho da navbar */
+}
+
+.navbar-dark .navbar-toggler {
+    color: white !important;
+    border: none !important;
+    right: 10px;
+}
+
+.nav-item {
+    padding: 2px 0 2px 16px;
+    background-color: var(--CorBase);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
 }
 
 .navItemText {
@@ -103,6 +186,7 @@ h2 {
     font-size: var(--Fonte32px);
     font-weight: var(--FonteBold);
     align-items: center;
+    position: absolute;
 }
 
 /* FIM DAS CONFIGURAÇÕES DA NAVBAR */
@@ -128,9 +212,9 @@ h2 {
     top: 50%;
 }
 
-.breadcrumb_items.active {
+.breadcrumb-item.active a {
     /* Configurar os Itens do Breadcrumb */
-    color: var(--CorBase);
+    color: var(--CorBase) !important;
     font-size: var(--Fonte16px);
     text-decoration: none;
 }
@@ -147,38 +231,109 @@ h2 {
     color: var(--CorCinzaEscuro);
 }
 
-/* FIM DAS CONFIGURAÇÕES DE BREADCRUMB */
+/* --- */
 
 /* CONFIGURAÇÕES DA BARRA DE COLAPSO */
 
+/* Media para a flecha funcionar somente quando a tela for menor do que 992px */
+
+.mobile-arrow{
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.mobile-arrowIcon {
+    /* Rotacionar a flecha para a direita */
+    transform: rotate(0);
+    color: var(--CorPreto);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    height: 15px;
+    width: 15px;
+}
+
+.mobile-arrowIcon:hover{
+    color: var(--Corfff);
+    background-color: var(--CorBase);
+}
+
+.rotate {
+    /* Rotacionar a flecha para a esquerda */
+    transform: rotate( 180deg);
+    transition: all 0.5s;
+}
+
+/* Fazer com que a flecha suma quando a tela for maior do que 992px */
+
+/* @media only screen and (min-width: 992px) {
+    .mobile-arrow {
+        opacity: 0;
+        position: absolute;
+    }
+} */
+
 /* Configurações dos itens da lista */
 
-.nav-sidebar ul { /* Retirar margens da lista */
+.nav-sidebar ul {
+    /* Retirar margens da lista */
     margin: 0;
     padding: 0;
 }
 
-.nav-sidebar ul li { /* Retirar as bullets da lista */
+.nav-sidebar ul li {
+    /* Retirar as bullets da lista */
     list-style: none;
+    margin: 8px 0;
 }
 
- /* Barra lateral */
-.sideBar{ /* Diminuir o tamanho quando esta colapsada */
-    position: fixed;
-    z-index: 1;
-    width: 4%;
-    background-color: var(--CorBranco);
-    transition: all 0.5s ease;
-    height: 100%;
-    overflow-x: hidden;
-}
-.sideBar.noCollapse{ /* Aumentar o tamanho quando não está colapsada */
-    width: 20%;
-}
- /* --- */
+/* Barra lateral */
 
- /* Configurações dos itens ativos da barra lateral*/
-.sideBar.noCollapse .sidebar-item.active { /* Configurações quando a barra não está colapsada*/
+@media only screen and (min-width: 992px) {
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 1;
+        width: 78px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 1;
+        width: 39px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+}
+
+/* --- */
+
+/* Configurações dos itens ativos da barra lateral*/
+
+.sideBar.noCollapse .sidebar-item.active {
+    /* Configurações quando a barra não está colapsada*/
     margin: 4px 0 !important;
     position: relative !important;
     top: 5px !important;
@@ -189,10 +344,15 @@ h2 {
     line-height: 25px !important;
     padding-left: 20px !important;
     transition: all 0.2s !important;
+    border: 1px solid var(--CorBase) !important;
 }
-.sidebar-item.active { /* Configuração quando a barra está colapsada */
+
+.sidebar-item.active {
+    /* Configuração quando a barra está colapsada */
     position: relative !important;
+    right: 5px !important;
     top: 5px !important;
+    width: calc(100% + 12%);
     display: flex !important;
     background-color: var(--CorBase) !important;
     font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins) !important;
@@ -206,16 +366,44 @@ h2 {
     opacity: 1 !important;
     pointer-events: auto !important;
 }
-.sideBar.noCollapse .sidebar-item.active:hover { /* Hover da barra não colapsada */
+
+.sideBar.noCollapse .sidebar-item.active:hover {
+    /* Hover da barra não colapsada */
     border: 1px solid var(--CorBase) !important;
     background-color: var(--CorBase) !important;
     color: var(--CorCinza) !important;
     box-shadow: 1px 4px 10px #00000033;
 }
- /* --- */
 
- /* Configurações dos itens da barra lateral */
-.sideBar .sidebar-item { /* Configuração quando a barra não está colapsada */
+/* --- */
+
+/* Configurações dos itens da barra lateral */
+
+.sideBar .btnArrow {
+    position: relative;
+    top: 5px;
+    display: flex;
+    background-color: var(--CorBranco);
+    font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins);
+    color: var(--CorPreto);
+    border-radius: 4px;
+    border: none;
+    transition: color 0.2s ease;
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sideBar .btnArrow:hover {
+    background-color: var(--CorBase);
+    color: var(--Corfff);
+    box-shadow: 1px 4px 10px #00000033;
+}
+
+.sideBar .sidebar-item {
+    /* Configuração quando a barra não está colapsada */
     position: relative;
     top: 5px;
     display: flex;
@@ -238,7 +426,8 @@ h2 {
     box-shadow: 1px 4px 10px #00000033;
 }
 
-.sideBar.noCollapse .sidebar-item{ /* Configuração quando a barra está colapsada */
+.sideBar.noCollapse .sidebar-item {
+    /* Configuração quando a barra está colapsada */
     margin: 4px 0;
     position: relative;
     width: auto;
@@ -249,29 +438,38 @@ h2 {
     justify-content: center;
     pointer-events: auto;
 }
- /* --- */
 
- /* Configurações dos textos da barra lateral */
-.sideBar.noCollapse .nav-sidebar .sidebar-text{ /* Configuração quando a barra não está colapsada */
+/* --- */
+
+/* Configurações dos textos da barra lateral */
+
+.sideBar.noCollapse .nav-sidebar .sidebar-text {
+    /* Configuração quando a barra não está colapsada */
     position: relative;
     opacity: 1;
     transition: all 0.5 ease;
 }
 
-.sideBar .nav-sidebar .sidebar-text{ /* Configuração quando a barra está colapsada */
+.sideBar .nav-sidebar .sidebar-text {
+    /* Configuração quando a barra está colapsada */
     position: absolute;
     opacity: 0;
 }
- /* --- */
 
-.sideBar .nav-sidebar .sidebar-icon{ /* Configuração dos icones quando a barra está colapsada */
+/* --- */
+
+.sideBar .nav-sidebar .sidebar-icon {
+    /* Configuração dos icones quando a barra está colapsada */
     position: relative;
     padding: 5px;
 }
- /* --- */ 
 
- /* Configurações do perfil da barra lateral */
-.sideBar.noCollapse .profile .profile-picture{ /* Configuração da foto quando a barra não está colapsada */
+/* --- */
+
+/* Configurações do perfil da barra lateral */
+
+.sideBar.noCollapse .profile .profile-picture {
+    /* Configuração da foto quando a barra não está colapsada */
     position: relative;
     object-fit: cover;
     top: 0;
@@ -282,14 +480,84 @@ h2 {
     pointer-events: auto;
 }
 
-.sideBar .profile .profile-picture{ /* Configuração da foto quando a barra está colapsada */
+.sideBar .profile .profile-picture {
+    /* Configuração da foto quando a barra está colapsada */
     /* Fazer com que a foto suma quando a barra estiver colapsada */
     pointer-events: none;
     opacity: 0;
     position: absolute;
 }
 
-.sideBar.noCollapse .profile .profile-name{ /* Configuração do nome quando a barra não está colapsada */
+.sideBar .profile .profile-picture .bg_cameraIcon {
+    /* Icone da foto quando a barra não estiver colapsada*/
+    /* Animação de volta do icone de foto */
+    position: absolute;
+    bottom: 2px;
+    right: -52px;
+    opacity: 0;
+}
+
+.sideBar.noCollapse .profile .profile-picture .cameraIcon {
+    /* Configurações do icone de foto */
+    /* Fazer com que mostre o icone quando a barra não estiver colapsada*/
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.sideBar.noCollapse .profile .profile-picture .switchIcon {
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    color: var(--CorCinzaEscuro);
+    opacity: 0;
+}
+
+.sideBar.noCollapse .profile .profile-picture .profile-switchImg:hover .switchIcon {
+    position: absolute;
+    top: 75px;
+    left: 110px;
+    color: var(--CorPreto);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.sideBar .profile .profile-picture .profile-switchImg {
+    color: var(--CorBranco);
+    opacity: 0;
+}
+
+.sideBar.noCollapse .profile .profile-picture .profile-switchImg {
+    color: var(--CorPreto);
+    opacity: 1;
+}
+
+.sideBar.noCollapse .profile .profile-picture .profile-switchImg .profile-myPhoto {
+    filter: grayscale(0%);
+    transition: 0.5s;
+}
+
+.sideBar.noCollapse .profile .profile-picture .profile-switchImg:hover .profile-myPhoto {
+    filter: grayscale(80%);
+}
+
+.sideBar.noCollapse .profile .profile-picture .bg_cameraIcon {
+    /* Configurações do fundo do icone de camera no perfil */
+    position: absolute;
+    background-color: var(--CorBranco);
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    bottom: 2px;
+    right: 52px;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.sideBar.noCollapse .profile .profile-name {
+    /* Configuração do nome quando a barra não está colapsada */
     position: relative;
     top: 0;
     left: 0;
@@ -300,7 +568,8 @@ h2 {
     transition: all .3s ease;
 }
 
-.sideBar .profile .profile-name{ /* Configuração do nome quando a barra está colapsada */
+.sideBar .profile .profile-name {
+    /* Configuração do nome quando a barra está colapsada */
     /* Fazer com que a foto suma quando a barra estiver colapsada */
     pointer-events: none;
     opacity: 0;
@@ -310,6 +579,15 @@ h2 {
 /* --- */
 
 /* CONFIGURAÇÕES DA SEÇÃO DE INFORMAÇÕES */
+
+@media only screen and (max-width: 991px) {
+    .bg_background {
+        /* Background da parte das informações */
+        background-color: var(--CorCinza);
+        height: auto;
+        padding-top: 8px;
+    }
+}
 
 .bg_background {
     /* Background da parte das informações */
@@ -323,6 +601,11 @@ h2 {
     background-color: var(--Corfff);
     padding: var(--Padding16px) 0px 0px var(--Padding16px);
     border-radius: 4px;
+    transition: 0.2s;
+}
+
+.bg-d-profile:hover {
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 20%);
 }
 
 .bg-d-vehicles {
@@ -332,6 +615,11 @@ h2 {
     margin-bottom: 12px;
     border-radius: 4px;
     border-radius: 4px;
+    transition: 0.2s;
+}
+
+.bg-d-vehicles:hover {
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 20%);
 }
 
 .bg-d-adresses {
@@ -340,6 +628,11 @@ h2 {
     padding: var(--Padding16px) 0px 0px var(--Padding16px);
     margin-bottom: 12px;
     border-radius: 4px;
+    transition: 0.2s;
+}
+
+.bg-d-adresses:hover {
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 20%);
 }
 
 .bg-d-banks {
@@ -348,6 +641,11 @@ h2 {
     padding: var(--Padding16px) 0px 0px var(--Padding16px);
     border-radius: 4px;
     margin-bottom: 12px;
+    transition: 0.2s;
+}
+
+.bg-d-banks:hover {
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 20%);
 }
 
 .bg-d-contacts {
@@ -356,6 +654,11 @@ h2 {
     padding: var(--Padding16px) 0px 0px var(--Padding16px);
     margin-top: 12px;
     border-radius: 4px;
+    transition: 0.2s;
+}
+
+.bg-d-contacts:hover {
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 20%);
 }
 
 /* --- */
@@ -401,19 +704,22 @@ h2 {
 
 /* SEÇÃO DA PAGINA DE PERFIL */
 
-.bg_profile {
+.bg_sections {
     /* Background da pagina de Perfil */
     background-color: var(--Corfff);
     padding: var(--Padding16px) var(--Padding16px) 0px var(--Padding16px);
     border-radius: 4px;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-bottom: 12px;
 }
 
-.bg_profile .form-label {
+.bg_sections .form-label {
     /* Modificar os labels dos formularios da pagina de perfil */
     color: var(--CorCinzaEscuro);
 }
 
-.bg_profile .form-control {
+.bg_sections .form-control {
     /* Configurações do formato dos formularios */
     border: none !important;
     border-radius: 4px;
@@ -450,10 +756,12 @@ h2 {
     background-color: var(--Corfff);
     padding: 12px;
     border-radius: 4px;
+    transition: 0.2s;
 }
 
 .bg_Items:hover {
     /* Hover ao passar o mouse na caixa dos itens */
+    /* box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 20%); */
     background-color: var(--CorBranco);
 }
 

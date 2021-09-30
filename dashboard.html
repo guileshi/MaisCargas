@@ -98,75 +98,81 @@
         </div>
     </header>
 
-    <div class="container-fluid d-block justify-content-start">
-        <div class="row">
-            <div class="col-1 bg_collapse sideBar">
-                <div>
-                    <div class="profile">
-                        <div class="profile-picture justify-content-center d-flex">
-                            <picture>
-                                <img src="img/caminhao2.jpg" alt="Minha foto de Perfil" height="150px" width="150px"
-                                    style="border-radius: 50%;">
-                            </picture>
-                        </div>
-                        <div class="profile-name justify-content-center d-flex">
-                            Guile L
-                        </div>
-                    </div>
-                    <nav class="nav-sidebar">
-                        <ul>
-                            <li>
-                                <a href="#" class="sidebar-item list-group-item list-group-item-action active">
-                                    <i class="fas fa-columns fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Dashboard</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="perfil.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-user fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Perfil</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="veiculos.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-truck fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Veículos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="enderecos.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-home fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Endereços</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="bancos.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-dollar-sign fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Bancos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="contatos.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-phone fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Contatos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="anunciar.html" class="sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-truck-loading fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Anunciar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" type="button" role="button" class="btn sidebar-item list-group-item list-group-item-action">
-                                    <i class="fas fa-sign-out-alt fa-lg px-1 sidebar-icon"></i>
-                                    <span class="sidebar-text">Desconectar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+    <div class="bg_collapse sideBar">
+        <div class="profile">
+            <div class="profile-picture justify-content-center d-flex">
+                <picture>
+                    <a href="#" class="profile-switchImg">
+                        <img src="img/caminhao2.jpg" alt="Minha foto de Perfil" height="150px" width="150px"
+                            style="border-radius: 50%;" class="profile-myPhoto">
+                        <i class="fas fa-sync fa-lg switchIcon"></i>
+                        <span href="#" class="bg_cameraIcon">
+                            <i class="fa fa-camera fa-lg cameraIcon"></i>
+                        </span>
+                    </a>
+                </picture>
             </div>
+            <div class="profile-name justify-content-center d-flex">
+                Guile L
+            </div>
+        </div>
+        <nav class="nav-sidebar">
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="sidebar-item list-group-item list-group-item-action active">
+                        <i class="fas fa-columns fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-user fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="veiculos.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-truck fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Veículos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="enderecos.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-home fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Endereços</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bancos.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-dollar-sign fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Bancos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contatos.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-phone fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Contatos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="anunciar.html" class="sidebar-item list-group-item list-group-item-action">
+                        <i class="fas fa-truck-loading fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Anunciar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" type="button" role="button"
+                        class="btn sidebar-item list-group-item list-group-item-action" id="logout">
+                        <i class="fas fa-sign-out-alt fa-lg px-1 sidebar-icon"></i>
+                        <span class="sidebar-text">Desconectar</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container-fluid d-block justify-content-start main-content">
+        <div class="row">
             <div class="col bg_background dashboard_items" style="padding-right: 6px;">
                 <div class="col-12 bg-d-profile" id="my_data">
                     <!-- Perfil -->
