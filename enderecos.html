@@ -18,151 +18,190 @@
 <body>
     <!-- Navbar -->
     <header class="fixed-top">
-        <div class="bg_navbar">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg" role="navigation">
-                    <a href="#" class="nav-link navLogo">
-                        <!-- Logo / Texto -->
-                        MaisCargas
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
-                        aria-controls="menu" aria-expanded="false" aria-label="Menu colapso">
-                        <span class="navbar-toggler-icon text-dark"></span>
-                    </button>
-                    <div id="menuNav" class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav ml-auto">
-                            <!-- Links -->
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <span class="navItemText">
-                                        Home
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <span class="navItemText">
-                                        Quem Somos
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <span class="navItemText">
-                                        Serviços
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <span class="navItemText">
-                                        Cotação
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="3" class="nav-link">
-                                    <span class="navItemText">
-                                        Contato
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
 
+        <!-- Configurações da Navbar(topo) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg_navbar">
+            <div class="container-fluid p-0">
+
+                <!-- Logo -->
+                <a href="#" class="navbar-brand text-capitalize">Mais Cargas</a>
+
+                <!-- Botão de Colapso -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Abrir o Menu">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+
+                <!-- Lista de Colapso -->
+                <div class="collapse navbar-collapse justify-content-lg-end" id="navbarMenu">
+                    <ul class="navbar-nav">
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-capitalize">Home</a>
+                        </li>
+
+                        <!-- Quem Somos -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-capitalize">quem somos</a>
+                        </li>
+
+                        <!-- Serviços -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-capitalize">serviços</a>
+                        </li>
+
+                        <!-- Cotações -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-capitalize">cotações</a>
+                        </li>
+
+                        <!-- Contato -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-capitalize">contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
         <div class="container-fluid bg_breadcrumb">
             <div class="row">
-                <div class="col-3">
-                    <span class="breadcrumb_title breadcrumb_section p-3">
-                        Endereços
-                    </span>
-                </div>
-                <div class="col-9">
-                    <ol class="breadcrumb justify-content-end breadcrumb_section p-1">
-                        <li class="breadcrumb-item">
-                            <a href="#" class="breadcrumb_items">
-                                <span>Lista de Fretes</span>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <a href="#" class="breadcrumb_items">
-                                Endereços
-                            </a>
-                        </li>
-                    </ol>
+                <div class="col-sm-12 d-flex align-content-center">
+                    <div class="col-lg-3 col">
+
+                        <!-- Pagina Atual -->
+                        <span class="breadcrumb_title breadcrumb_section p-1">
+                            Endereço
+                        </span>
+                    </div>
+                    <div class="col-lg-9 col">
+                        <ol class="breadcrumb justify-content-end breadcrumb_section">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="breadcrumb_items">
+
+                                    <!-- Pagina Anterior -->
+                                    Lista de Fretes
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a href="#" class="breadcrumb_items">
+
+                                    <!-- Pagina Atual(de novo) -->
+                                    Endereços
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Side(nav)bar -->
     <div class="bg_collapse sideBar">
+
+        <!-- Configurações da Sidebar -->
         <div class="profile">
+
+            <!-- Botão de Expansão da Barra -->
+            <button class="btn btn-danger btnToggle list-group-item list-group-item-action toggler-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Abrir o Menu" role="button">
+
+                <!-- Icone de Expansão da Barra -->
+                <i class="fas fa-angle-double-right fa-lg noRotate" aria-hidden="true" id="rotate-toggler"></i>
+            </button>
+
+            <!-- Configurações de Perfil -->
             <div class="profile-picture justify-content-center d-flex">
                 <picture>
-                    <a href="#" class="profile-switchImg">
+                    <a href="#" class="profile-switchImg" data-bs-toggle="tooltip" data-bs-placement="right" title="Trocar de Foto">
+
+                        <!-- Imagem de Perfil -->
                         <img src="img/caminhao2.jpg" alt="Minha foto de Perfil" height="150px" width="150px"
                             style="border-radius: 50%;" class="profile-myPhoto">
-                        <i class="fas fa-sync fa-lg switchIcon"></i>
+                        <i class="fas fa-sync-alt fa-lg switchIcon"></i>
+
+                        <!-- Configurações da Camera embaixo da Foto -->
                         <span href="#" class="bg_cameraIcon">
+
+                            <!-- Icone da Camera embaixo da Foto -->
                             <i class="fa fa-camera fa-lg cameraIcon"></i>
                         </span>
                     </a>
                 </picture>
             </div>
-            <div class="profile-name justify-content-center d-flex">
-                Guile L
+
+            <!-- Nome do Usuario -->
+            <div class="profile-name justify-content-center d-flex text-capitalize">
+                Meu Nome
             </div>
         </div>
+
+        <!-- Configurações da Lista de Links -->
         <nav class="nav-sidebar">
+
+            <!-- Lista de Links -->
             <ul>
                 <li>
-                    <a href="dashboard.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Dashboard -->
+                    <a href="dashboard.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
                         <i class="fas fa-columns fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="perfil.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Perfil -->
+                    <a href="perfil.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Perfil">
                         <i class="fas fa-user fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Perfil</span>
                     </a>
                 </li>
                 <li>
-                    <a href="veiculos.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Veículos -->
+                    <a href="veiculos.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Veículos">
                         <i class="fas fa-truck fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Veículos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="enderecos.html" class="sidebar-item list-group-item list-group-item-action active">
+
+                    <!-- Endereços -->
+                    <a href="enderecos.html" class="sidebar-item list-group-item list-group-item-action active" data-bs-toggle="tooltip" data-bs-placement="right" title="Endereços">
                         <i class="fas fa-home fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Endereços</span>
                     </a>
                 </li>
                 <li>
-                    <a href="bancos.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Bancos -->
+                    <a href="bancos.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Bancos">
                         <i class="fas fa-dollar-sign fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Bancos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="contatos.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Contatos -->
+                    <a href="contatos.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Contatos">
                         <i class="fas fa-phone fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Contatos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="anunciar.html" class="sidebar-item list-group-item list-group-item-action">
+
+                    <!-- Anunciar -->
+                    <a href="anunciar.html" class="sidebar-item list-group-item list-group-item-action" data-bs-toggle="tooltip" data-bs-placement="right" title="Anunciar">
                         <i class="fas fa-truck-loading fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Anunciar</span>
                     </a>
                 </li>
                 <li>
+
+                    <!-- Desconectar -->
                     <a href="#" type="button" role="button"
-                        class="btn sidebar-item list-group-item list-group-item-action" id="logout">
+                        class="btn sidebar-item list-group-item list-group-item-action" id="logout" data-bs-toggle="tooltip" data-bs-placement="right" title="Desconectar">
                         <i class="fas fa-sign-out-alt fa-lg px-1 sidebar-icon"></i>
                         <span class="sidebar-text">Desconectar</span>
                     </a>
@@ -173,94 +212,117 @@
 
     <div class="container-fluid d-block justify-content-start main-content">
         <div class="row">
-            <div class="col bg_background">
+            <div class="col-md-7 col-sm-12 mx-auto bg_background">
                 <section class="bg_sections">
                     <h2>
                         ENDEREÇOS
                     </h2>
-                    <div class="col-12">
-                        <div class="bg_Items">
-                            <ul class="list-group list-group-horizontal">
-                                <!-- Lista Label -->
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Nome
-                                </li>
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Cidade
-                                </li>
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Estado
-                                </li>
-                            </ul>
-
-                            <ul class="list-group list-group-horizontal">
-                                <!-- Lista de Informações fornecidas pelos Inputs -->
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    Endereço 1
-                                </li>
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    São Paulo
-                                </li>
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    São Paulo
-                                </li>
-                            </ul>
-
-                            <div class="d-flex justify-content-end list-buttons">
-                                <button class="btn btn-dark itemEditBtn text-uppercase" role="button" type="button">
-                                    <!-- Botão de Editar -->
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-danger itemRemoveBtn text-uppercase" role="button" type="button">
-                                    <!-- Botão de Remover -->
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-12 mt-2">
                         <div class="bg_Items">
-                            <ul class="list-group list-group-horizontal">
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Nome
-                                </li>
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Cidade
-                                </li>
-                                <li class="list-group-item list-label w-25 text-uppercase">
-                                    Estado
-                                </li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-md-3 col-12 mb-2 mb-md-auto">
+                                    <div class="list-label text-uppercase">
+                                        Nome
+                                    </div>
+                                    <div class="list-value text-capitalize">
+                                        Contato 1
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12 mb-2 mb-md-auto">
+                                    <div class="list-label text-uppercase">
+                                        Cidade
+                                    </div>
+                                    <div class="list-value text-capitalize">
+                                        São Paulo
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12 mb-2 mb-md-auto">
+                                    <div class="list-label text-uppercase">
+                                        Estado
+                                    </div>
+                                    <div class="list-value text-capitalize">
+                                        São Paulo
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12 d-flex btn-mobile">
+                                    <div class="ms-auto">
+                                        <button class="btn btn-dark text-uppercase itemEditBtn" role="button"
+                                            type="button">
 
-                            <ul class="list-group list-group-horizontal">
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    Endereço 2
-                                </li>
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    Rio de Janeiro
-                                </li>
-                                <li class="list-group-item list-value w-25 text-capitalize">
-                                    Rio de Janeiro
-                                </li>
-                            </ul>
-                            <div class="d-flex justify-content-end list-buttons">
-                                <button class="btn btn-dark itemEditBtn text-uppercase" role="button" type="button">
-                                    <!-- Botão de Editar -->
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-danger itemRemoveBtn text-uppercase" role="button" type="button">
-                                    <!-- Botão de Remover -->
-                                    <i class="fas fa-times"></i>
-                                </button>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-danger text-uppercase itemRemoveBtn" role="button"
+                                            type="button">
+
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="enderecos-criar.html" class="btn editBtn text-uppercase" role="button" type="button">
-                            adicionar endereço
+                        <a href="#form-create" class="btn editBtn text-uppercase" role="button" type="button"
+                            id="item-create">
+                            novo endereço
                         </a>
                     </div>
+                </section>
+            </div>
+            <div class="col bg_background hide" id="form-create">
+                <section class="bg_sections">
+                    <h2>
+                        ADICIONAR ENDEREÇO
+                    </h2>
+                    <form role="form" aria-label="Informações de Cotação">
+                        <div class="row d-flex">
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-name" name="adress-name" placeholder="Ex.: Endereço 1" required aria-required="true" aria-labelledby="adress-name"
+                                aria-hidden="false">
+                                <label for="adress-name" class="form-label p-4 required">Nome</label>
+                            </div>
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-city" name="adress-city" placeholder="Ex.: São Paulo" required aria-required="true" aria-labelledby="adress-city"
+                                aria-hidden="false">
+                                <label for="adress-city" class="form-label p-4 required">Cidade</label>
+                            </div>
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-state" name="adress-state" placeholder="Ex.: São Paulo" required aria-required="true" aria-labelledby="adress-state"
+                                aria-hidden="false">
+                                <label for="adress-state" class="form-label p-4 required">Estado</label>
+                            </div>
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-district" name="adress-district" placeholder="Ex.: Parque Novo Mundo" required aria-required="true" aria-labelledby="adress-district"
+                                aria-hidden="false">
+                                <label for="adress-district" class="form-label p-4 required">Bairro</label>
+                            </div>
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-road" name="adress-road" placeholder="Ex.: Rua Exemplo" required aria-required="true" aria-labelledby="adress-road"
+                                aria-hidden="false">
+                                <label for="adress-road" class="form-label p-4 required">Rua</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="number" class="form-control" id="adress-cep" name="adress-cep" placeholder="Ex.: 12345-678" required aria-required="true" aria-labelledby="adress-cep"
+                                aria-hidden="false">
+                                <label for="adress-cep" class="form-label p-4 required">CEP</label>
+                            </div>
+                            <div class="col-6 form-floating profileInput">
+                                <input type="number" class="form-control" id="adress-number" name="adress-number" placeholder="Ex.: 49" aria-required="false" aria-labelledby="adress-number"
+                                aria-hidden="false">
+                                <label for="adress-number" class="form-label p-4">Número</label>
+                            </div>
+                            <div class="col-md-6 col-12 form-floating profileInput">
+                                <input type="text" class="form-control" id="adress-complement" name="adress-complement" placeholder="Ex.: Em frente à praça"aria-required="false" aria-labelledby="adress-complement"
+                                aria-hidden="false">
+                                <label for="adress-complement" class="form-label p-4">Complemento</label>
+                            </div>
+                            <div class="d-flex justify-content-end ms-auto" style="width: auto;">
+                                <button class="btn btn-danger editBtn text-uppercase" role="button" type="submit">
+                                    criar endereço
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
         </div>

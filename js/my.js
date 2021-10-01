@@ -1,23 +1,25 @@
-
 let cel = window.matchMedia('(max-width: 576px)');
 let tablet = window.matchMedia('(min-width: 768px)');
 let pc = window.matchMedia('(min-width: 992px)');
 
-// if (pc.matches) {
-//     $(function () {
-//         $('.sideBar').hover(function () {
-//             $(this).toggleClass('noCollapse')
-//         })
-//     })
-//     console.log("Parou no IF")
-// } else {
-//     console.log("Parou no Else")
-// }
-
-
-$(function () { 
-    $('.mobile-arrow').click(function(){
+$(function () {
+    $('.toggler-icon').click(function () {
         $('.sideBar').toggleClass('noCollapse')
-        $('#rotate-arrow').toggleClass('rotate')
+        $('#rotate-toggler').toggleClass('rotate noRotate')
     })
- })
+})
+
+$(function () {
+    $('.main-content').click(function () {
+        $('.sideBar').removeClass('noCollapse')
+        $('#rotate-toggler').removeClass('rotate')
+        $('#rotate-toggler').addClass('noRotate')
+    })
+})
+
+$(function(){
+    $('#item-create').click(function(){
+        $('#form-create').removeClass('hide')
+        $('#form-create').addClass('unHide')
+    })
+})

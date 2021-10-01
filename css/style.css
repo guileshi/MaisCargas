@@ -12,6 +12,8 @@
     --CorCinza: #DBDBDB;
     --CorCinzaEscuro: #6F6F6F;
     --CorPreto: #343434;
+    /* Cor especifica */
+    --CorBaseAlpha: rgba(139, 0, 0, 95%);
     /* FIM DA SEÇÃO DE CORES */
     /* SEÇÃO DE FONTES */
     --Fonte12px: 0.750em;
@@ -54,8 +56,17 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    padding-top: 56px;
+    padding-top: 136px;
     background-color: var(--CorCinza);
+}
+
+.tooltip {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
 }
 
 /* SCROLL */
@@ -92,6 +103,7 @@ body {
 } */
 
 h2 {
+    /* Configurações H2 */
     font: var(--FonteBold) var(--Fonte32px) var(--Poppins);
 }
 
@@ -99,26 +111,148 @@ h2 {
     /* Classe para esconder elementos */
     opacity: 0 !important;
     pointer-events: none;
+    position: absolute;
+}
+
+.unHide{
+    opacity: 1 !important;
+    pointer-events: auto;
+    position: inherit;
+    transition: 0.5s;
 }
 
 .text-muted {
+    /* Deixar o texto muted com 12 pixels */
     font-size: var(--Fonte12px);
 }
 
 .required::after {
+    /* Adicionar um asterisco vermelho */
     content: ' *';
     color: var(--CorBase);
 }
 
-@media only screen and (max-width: 991px) {
+/* Dimensões da Tela quando estiver no celular */
+@media only screen and (max-width: 576px) {
     .main-content {
         width: calc(100% - 32px);
         left: 20px;
         position: relative;
         transition: all 0.5s ease;
     }
+
+    .btn-mobile{
+        position: relative;
+        top: -160px;
+        right: 0;
+    }
+
+    /* Botão Remover */
+    .itemRemoveBtn {
+        /* Configuração do botão de excluir (x) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorBase);
+        transition: all 0.2s ease-out;
+        padding: 0px 8px;
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+
+    .itemRemoveBtn:hover {
+        /* Hover do botão de excluir (x) */
+        background-color: var(--CorBase);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
+
+    /* Botão Editar */
+    .itemEditBtn {
+        /* Configuração do botão de editar (pencil) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorPreto);
+        transition: all 0.2s ease-out;
+        margin-right: 4px;
+        padding: 0px 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+
+    .itemEditBtn:hover {
+        /* Hover do botão de editar (pencil) */
+        background-color: var(--CorPreto);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
 }
 
+/* Dimensões da Tela quando estiver no tablet */
+@media only screen and (min-width: 768px) {
+    .main-content {
+        width: calc(100% - 32px);
+        left: 20px;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+
+    .btn-mobile{
+        position: relative;
+        top: 0;
+        right: -32px;
+    }
+
+     /* Botão Remover */
+     .itemRemoveBtn {
+        /* Configuração do botão de excluir (x) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorBase);
+        transition: all 0.2s ease-out;
+        padding: 10px 16px;
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+
+    .itemRemoveBtn:hover {
+        /* Hover do botão de excluir (x) */
+        background-color: var(--CorBase);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
+
+    /* Botão Editar */
+    .itemEditBtn {
+        /* Configuração do botão de editar (pencil) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorPreto);
+        transition: all 0.2s ease-out;
+        margin-right: 8px;
+        padding: 10px 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+
+    .itemEditBtn:hover {
+        /* Hover do botão de editar (pencil) */
+        background-color: var(--CorPreto);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
+}
+
+/* Dimensões da Tela quando estiver no PC */
 @media only screen and (min-width: 992px) {
     .main-content {
         position: relative;
@@ -126,11 +260,50 @@ h2 {
         left: 38px;
         transition: all 0.5s ease;
     }
-}
 
-.sideBar.noCollapse~.main-content {
-    width: calc(100% - 250px);
-    left: 124px;
+    .btn-mobile{
+        position: inherit;
+    }
+
+    /* Botão Remover */
+    .itemRemoveBtn {
+        /* Configuração do botão de excluir (x) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorBase);
+        transition: all 0.2s ease-out;
+        margin: 0 2px;
+    }
+    .bg_Items:hover .list-buttons .itemRemoveBtn {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .itemRemoveBtn:hover {
+        /* Hover do botão de excluir (x) */
+        background-color: var(--CorBase);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
+
+    /* Botão Editar */
+    .itemEditBtn {
+        /* Configuração do botão de editar (pencil) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorPreto);
+        transition: all 0.2s ease-out;
+        margin: 0 2px;
+    }
+    .bg_Items:hover .list-buttons .itemEditBtn {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .itemEditBtn:hover {
+        /* Hover do botão de editar (pencil) */
+        background-color: var(--CorPreto);
+        color: var(--Corfff);
+        border: 1px solid var(--CorPreto);
+    }
 }
 
 /* --- */
@@ -143,6 +316,7 @@ h2 {
 }
 
 .navbar-brand {
+    /* Logo da Navbar */
     padding: 0 0 0 16px;
     margin: 0;
     color: var(--Corfff) !important;
@@ -151,22 +325,27 @@ h2 {
 }
 
 .navbar {
-    height: 56px;
     /* Modificar o tamanho da navbar */
+    height: 56px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-dark .navbar-toggler {
+    /* Mudar a cor do icone de abertura da navbar */
     color: white !important;
     border: none !important;
     right: 10px;
 }
 
 .nav-item {
+    /* Configurações dos itens da navbar */
     padding: 2px 0 2px 16px;
-    background-color: var(--CorBase);
+    background-color: var(--CorBaseAlpha);
+    z-index: 9999999999;
 }
 
 .navbar-dark .navbar-nav .nav-link {
+    /* Deixar os links da Navbar brancos*/
     color: white;
 }
 
@@ -179,14 +358,6 @@ h2 {
 .navItemText:hover {
     /* Hover dos links clicáveis */
     color: var(--CorCinza);
-}
-
-.navLogo {
-    color: var(--Corfff) !important;
-    font-size: var(--Fonte32px);
-    font-weight: var(--FonteBold);
-    align-items: center;
-    position: absolute;
 }
 
 /* FIM DAS CONFIGURAÇÕES DA NAVBAR */
@@ -227,6 +398,7 @@ h2 {
 }
 
 .breadcrumb_items:hover {
+    /* Hover */
     text-decoration: none;
     color: var(--CorCinzaEscuro);
 }
@@ -235,26 +407,14 @@ h2 {
 
 /* CONFIGURAÇÕES DA BARRA DE COLAPSO */
 
-/* Media para a flecha funcionar somente quando a tela for menor do que 992px */
-
-.mobile-arrow{
+.toggler-icon {
+    /* Configurações do Icone de Abertura da Sidebar */
     padding: 10px;
     margin: 8px 0;
 }
 
-.mobile-arrowIcon {
-    /* Rotacionar a flecha para a direita */
-    transform: rotate(0);
-    color: var(--CorPreto);
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    height: 15px;
-    width: 15px;
-}
-
-.mobile-arrowIcon:hover{
-    color: var(--Corfff);
-    background-color: var(--CorBase);
+#rotate-toggler {
+    padding: 5px;
 }
 
 .rotate {
@@ -263,14 +423,11 @@ h2 {
     transition: all 0.5s;
 }
 
-/* Fazer com que a flecha suma quando a tela for maior do que 992px */
-
-/* @media only screen and (min-width: 992px) {
-    .mobile-arrow {
-        opacity: 0;
-        position: absolute;
-    }
-} */
+.noRotate {
+    /* Rotacionar a flecha para a direita */
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
 
 /* Configurações dos itens da lista */
 
@@ -292,7 +449,7 @@ h2 {
     .sideBar {
         /* Diminuir o tamanho quando esta colapsada */
         position: fixed;
-        z-index: 1;
+        z-index: 99999;
         width: 78px;
         background-color: var(--CorBranco);
         transition: all 0.5s ease;
@@ -304,7 +461,7 @@ h2 {
         width: 250px;
         overflow-y: scroll !important;
         overflow-x: hidden;
-        max-height: 80%;
+        max-height: 99%;
     }
 }
 
@@ -350,14 +507,14 @@ h2 {
 .sidebar-item.active {
     /* Configuração quando a barra está colapsada */
     position: relative !important;
-    right: 5px !important;
+    right: 2px !important;
     top: 5px !important;
     width: calc(100% + 12%);
     display: flex !important;
     background-color: var(--CorBase) !important;
     font: var(--FonteSemiBold) var(--Fonte16px) var(--Poppins) !important;
     color: var(--Corfff) !important;
-    border-radius: 4px !important;
+    border-radius: 0 4px 4px 0 !important;
     border: none !important;
     transition: color 0.2s ease !important;
     line-height: 25px !important;
@@ -379,7 +536,8 @@ h2 {
 
 /* Configurações dos itens da barra lateral */
 
-.sideBar .btnArrow {
+.sideBar .btnToggle {
+    /* Configurações do Botão da Sidebar */
     position: relative;
     top: 5px;
     display: flex;
@@ -388,18 +546,15 @@ h2 {
     color: var(--CorPreto);
     border-radius: 4px;
     border: none;
-    transition: color 0.2s ease;
     line-height: 25px;
     align-items: center;
     justify-content: center;
-    opacity: 1;
-    pointer-events: auto;
 }
 
-.sideBar .btnArrow:hover {
+.sideBar .btnToggle:hover {
+    /* Hover */
     background-color: var(--CorBase);
     color: var(--Corfff);
-    box-shadow: 1px 4px 10px #00000033;
 }
 
 .sideBar .sidebar-item {
@@ -421,6 +576,7 @@ h2 {
 }
 
 .sidebar-item:hover {
+    /* Hover */
     background-color: var(--CorBase);
     color: var(--Corfff);
     box-shadow: 1px 4px 10px #00000033;
@@ -480,8 +636,9 @@ h2 {
     pointer-events: auto;
 }
 
+/* Configuração da foto quando a barra está colapsada */
+
 .sideBar .profile .profile-picture {
-    /* Configuração da foto quando a barra está colapsada */
     /* Fazer com que a foto suma quando a barra estiver colapsada */
     pointer-events: none;
     opacity: 0;
@@ -489,7 +646,6 @@ h2 {
 }
 
 .sideBar .profile .profile-picture .bg_cameraIcon {
-    /* Icone da foto quando a barra não estiver colapsada*/
     /* Animação de volta do icone de foto */
     position: absolute;
     bottom: 2px;
@@ -497,8 +653,9 @@ h2 {
     opacity: 0;
 }
 
+/* Configurações do icone de foto */
+
 .sideBar.noCollapse .profile .profile-picture .cameraIcon {
-    /* Configurações do icone de foto */
     /* Fazer com que mostre o icone quando a barra não estiver colapsada*/
     position: absolute;
     top: 7px;
@@ -506,6 +663,8 @@ h2 {
     opacity: 1;
     transition: 0.3s ease;
 }
+
+/* Icone de Trocar de Foto (Icone de Rotação) */
 
 .sideBar.noCollapse .profile .profile-picture .switchIcon {
     position: absolute;
@@ -516,7 +675,7 @@ h2 {
 }
 
 .sideBar.noCollapse .profile .profile-picture .profile-switchImg:hover .switchIcon {
-    position: absolute;
+    /* Hover que fará o icone aparecer */
     top: 75px;
     left: 110px;
     color: var(--CorPreto);
@@ -524,15 +683,21 @@ h2 {
     transition: all 0.5s ease;
 }
 
+/* Icone embaixo da Foto (Icone de Camera) */
+
 .sideBar .profile .profile-picture .profile-switchImg {
+    /* Sumir quando a barra estiver colapsada */
     color: var(--CorBranco);
     opacity: 0;
 }
 
 .sideBar.noCollapse .profile .profile-picture .profile-switchImg {
+    /* Aparecer quando a barra não estiver colapsada */
     color: var(--CorPreto);
     opacity: 1;
 }
+
+/* Configurações da Foto de Perfil */
 
 .sideBar.noCollapse .profile .profile-picture .profile-switchImg .profile-myPhoto {
     filter: grayscale(0%);
@@ -540,6 +705,7 @@ h2 {
 }
 
 .sideBar.noCollapse .profile .profile-picture .profile-switchImg:hover .profile-myPhoto {
+    /* No hover a imagem ficará com um filtro cinza */
     filter: grayscale(80%);
 }
 
@@ -709,7 +875,8 @@ h2 {
     background-color: var(--Corfff);
     padding: var(--Padding16px) var(--Padding16px) 0px var(--Padding16px);
     border-radius: 4px;
-    max-height: 80vh;
+    height: 75vh;
+    /* max-height: 80vh; */
     overflow-y: auto;
     margin-bottom: 12px;
 }
@@ -749,7 +916,7 @@ h2 {
 
 /* --- */
 
-/* SEÇÃO DE VEICULOS */
+/* SEÇÃO DAS PAGINAS */
 
 .bg_Items {
     /* Background Geral dos itens */
@@ -785,70 +952,21 @@ h2 {
     padding-left: 0;
 }
 
-.itemRemoveBtn {
-    /* Configuração do botão de excluir (x) */
-    font-weight: var(--FonteSemiBold);
-    background-color: transparent;
-    color: var(--CorBase);
-    transition: all 0.2s ease-out;
-    padding: 10px 16px;
-    border: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid transparent;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.bg_Items:hover .list-buttons .itemRemoveBtn {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.itemRemoveBtn:hover {
-    /* Hover do botão de excluir (x) */
-    background-color: var(--CorBase);
-    color: var(--Corfff);
-    border: 1px solid var(--CorPreto);
-}
-
-.itemEditBtn {
-    /* Configuração do botão de editar (pencil) */
-    font-weight: var(--FonteSemiBold);
-    background-color: transparent;
-    color: var(--CorPreto);
-    transition: all 0.2s ease-out;
-    margin-right: 8px;
-    padding: 10px 16px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid transparent;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.bg_Items:hover .list-buttons .itemEditBtn {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.itemEditBtn:hover {
-    /* Hover do botão de editar (pencil) */
-    background-color: var(--CorPreto);
-    color: var(--Corfff);
-    border: 1px solid var(--CorPreto);
-}
-
-.list-buttons {
-    /* Configuração para deixar os botões alinhados com a caixa */
-    margin-top: -56px;
-}
-
 /* Configuração unica da seção de anunciar */
-
 .announce-weight::after {
     content: "kg";
     color: var(--CorPreto);
 }
+
+/* Lista de Itens dos menus de Criar */
+
+.bg_Items ul{
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+.bg_Items ul li{
+    padding-right: 160px;
+}
+
