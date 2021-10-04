@@ -107,7 +107,8 @@
             <button class="btn btn-danger btnToggle list-group-item list-group-item-action toggler-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Abrir o Menu" role="button">
 
                 <!-- Icone de Expansão da Barra -->
-                <i class="fas fa-angle-double-right fa-lg noRotate" aria-hidden="true" id="rotate-toggler"></i>
+                <i class="fas fa-bars fa-lg unHide" aria-hidden="true" id="bars-icon"></i>
+                <i class="fas fa-times fa-lg hide" aria-hidden="true" id="close-icon"></i>
             </button>
 
             <!-- Configurações de Perfil -->
@@ -212,7 +213,7 @@
 
     <div class="container-fluid d-block justify-content-start main-content">
         <div class="row">
-            <div class="col bg_background dashboard_items" style="padding-right: 6px;">
+            <div class="col bg_background dashboard_items" style="margin-top: 12px;">
                 <div class="col-12 bg-d-profile" id="my_data">
                     <!-- Perfil -->
                     <h2>
@@ -301,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 bg_background dashboard_items" style="padding-left: 6px;">
+            <div class="col-lg-4 col-12 bg_background dashboard_items2" style="margin-top: 12px;">
                 <div class="col-12 bg-d-vehicles">
                     <!-- Veiculos -->
                     <h2>

@@ -111,10 +111,14 @@ h2 {
     /* Classe para esconder elementos */
     opacity: 0 !important;
     pointer-events: none;
+    display: none;
     position: absolute;
+    transition: 0.5s;
 }
 
-.unHide{
+.unHide {
+    /* Classe para aparecer elementos*/
+    position: auto;
     opacity: 1 !important;
     pointer-events: auto;
     position: inherit;
@@ -132,21 +136,93 @@ h2 {
     color: var(--CorBase);
 }
 
-/* Dimensões da Tela quando estiver no celular */
-@media only screen and (max-width: 576px) {
+/* Dimensões de Telas Especificas (tamanho maximo 281) */
+@media only screen and (max-width: 281px) {
     .main-content {
-        width: calc(100% - 32px);
+        /* Conteudo Principal */
+        width: calc(100% - 40px);
         left: 20px;
         position: relative;
         transition: all 0.5s ease;
     }
+    .bg-d-profile, .bg-d-adresses, .bg-d-banks, .bg-d-contacts, .bg-d-vehicles {
+        /* Modificar o padding em telas pequenas */
+        padding-left: 8px !important;
+    }
+    .bg_background {
+        /* Background da parte das informações */
+        background-color: var(--CorCinza);
+        height: auto;
+    }
+    .breadcrumb_section {
+        /* Centralizar o Breadcrumb em celular pequeno */
+        top: 30% !important;
+    }
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 1;
+        width: 39px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+    .itemRemoveBtn {
+        /* Configuração do botão de excluir (x) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorBase);
+        transition: all 0.2s ease-out;
+        padding: 0px 8px;
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+    .itemEditBtn {
+        /* Configuração do botão de editar (pencil) */
+        font-weight: var(--FonteSemiBold);
+        background-color: transparent;
+        color: var(--CorPreto);
+        transition: all 0.2s ease-out;
+        margin-right: 4px;
+        padding: 0px 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+}
 
-    .btn-mobile{
+/* Dimensões da Tela quando estiver no celular (tamanho minimo 282px) */
+@media only screen and (min-width: 282px) {
+    .main-content {
+        /* Conteudo Principal */
+        width: calc(100% - 40px);
+        left: 20px;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+    .btn-mobile {
+        /* Modificar o botão no Mobile */
         position: relative;
         top: -160px;
         right: 0;
     }
-
+    .bg_background {
+        /* Background da parte das informações */
+        background-color: var(--CorCinza);
+        height: auto;
+    }
     /* Botão Remover */
     .itemRemoveBtn {
         /* Configuração do botão de excluir (x) */
@@ -161,14 +237,12 @@ h2 {
         align-items: center;
         border: 1px solid transparent;
     }
-
     .itemRemoveBtn:hover {
         /* Hover do botão de excluir (x) */
         background-color: var(--CorBase);
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
     }
-
     /* Botão Editar */
     .itemEditBtn {
         /* Configuração do botão de editar (pencil) */
@@ -183,32 +257,60 @@ h2 {
         align-items: center;
         border: 1px solid transparent;
     }
-
     .itemEditBtn:hover {
         /* Hover do botão de editar (pencil) */
         background-color: var(--CorPreto);
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
     }
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 1;
+        width: 39px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+    #form-create {
+        /* Remover a Margem de cima no celular */
+        margin-top: -12px;
+    }
+    .dashboard_items, .dashboard_items2 {
+        /* Modificar o Padding no celular */
+        padding: 0 10px 0 10px;
+    }
+    .breadcrumb_section {
+        /* Centralizar o Breadcrumb no celular */
+        top: 30% !important;
+    }
 }
 
 /* Dimensões da Tela quando estiver no tablet */
 @media only screen and (min-width: 768px) {
     .main-content {
-        width: calc(100% - 32px);
-        left: 20px;
+        /* Conteudo Principal */
         position: relative;
+        width: calc(100% - 80px);
+        left: 38px;
         transition: all 0.5s ease;
     }
-
-    .btn-mobile{
+    .btn-mobile {
+        /* Modificar o botão no tablet */
         position: relative;
         top: 0;
         right: -32px;
     }
-
-     /* Botão Remover */
-     .itemRemoveBtn {
+    /* Botão Remover */
+    .itemRemoveBtn {
         /* Configuração do botão de excluir (x) */
         font-weight: var(--FonteSemiBold);
         background-color: transparent;
@@ -221,14 +323,12 @@ h2 {
         align-items: center;
         border: 1px solid transparent;
     }
-
     .itemRemoveBtn:hover {
         /* Hover do botão de excluir (x) */
         background-color: var(--CorBase);
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
     }
-
     /* Botão Editar */
     .itemEditBtn {
         /* Configuração do botão de editar (pencil) */
@@ -243,28 +343,49 @@ h2 {
         align-items: center;
         border: 1px solid transparent;
     }
-
     .itemEditBtn:hover {
         /* Hover do botão de editar (pencil) */
         background-color: var(--CorPreto);
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
     }
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 99999;
+        width: 78px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+    #form-create {
+        /* Remover a Margem de cima no celular */
+        margin-top: 0;
+    }
 }
 
 /* Dimensões da Tela quando estiver no PC */
+
 @media only screen and (min-width: 992px) {
     .main-content {
+        /* Conteudo Principal */
         position: relative;
         width: calc(100% - 80px);
         left: 38px;
         transition: all 0.5s ease;
     }
-
-    .btn-mobile{
+    .btn-mobile {
+        /* Deixar a posição base dos botões quando tiver no PC */
         position: inherit;
     }
-
     /* Botão Remover */
     .itemRemoveBtn {
         /* Configuração do botão de excluir (x) */
@@ -273,8 +394,11 @@ h2 {
         color: var(--CorBase);
         transition: all 0.2s ease-out;
         margin: 0 2px;
+        opacity: 0;
+        border: 1px solid transparent;
     }
-    .bg_Items:hover .list-buttons .itemRemoveBtn {
+    .bg_Items:hover .itemRemoveBtn {
+        /* Fazer com que o botão apareça quando tiver hover no fundo do elemento pai */
         opacity: 1;
         pointer-events: auto;
     }
@@ -284,7 +408,6 @@ h2 {
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
     }
-
     /* Botão Editar */
     .itemEditBtn {
         /* Configuração do botão de editar (pencil) */
@@ -293,8 +416,11 @@ h2 {
         color: var(--CorPreto);
         transition: all 0.2s ease-out;
         margin: 0 2px;
+        opacity: 0;
+        border: 1px solid transparent;
     }
-    .bg_Items:hover .list-buttons .itemEditBtn {
+    .bg_Items:hover .itemEditBtn {
+        /* Fazer com que o botão apareça quando tiver hover no fundo do elemento pai */
         opacity: 1;
         pointer-events: auto;
     }
@@ -303,6 +429,33 @@ h2 {
         background-color: var(--CorPreto);
         color: var(--Corfff);
         border: 1px solid var(--CorPreto);
+    }
+    .sideBar {
+        /* Diminuir o tamanho quando esta colapsada */
+        position: fixed;
+        z-index: 99999;
+        width: 78px;
+        background-color: var(--CorBranco);
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+    .sideBar.noCollapse {
+        /* Aumentar o tamanho quando não está colapsada */
+        position: fixed;
+        width: 250px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+        max-height: 80%;
+    }
+    #form-create {
+        /* Remover o padding da esquerda e a margem do topo quando tiver no PC */
+        padding-left: 0;
+        margin-top: 0;
+    }
+    .dashboard_items2 {
+        /* Modificar os paddings quando tiver no PC */
+        padding-left: 0;
+        padding-right: 10px;
     }
 }
 
@@ -413,22 +566,6 @@ h2 {
     margin: 8px 0;
 }
 
-#rotate-toggler {
-    padding: 5px;
-}
-
-.rotate {
-    /* Rotacionar a flecha para a esquerda */
-    transform: rotate( 180deg);
-    transition: all 0.5s;
-}
-
-.noRotate {
-    /* Rotacionar a flecha para a direita */
-    transform: rotate(0deg);
-    transition: all 0.5s;
-}
-
 /* Configurações dos itens da lista */
 
 .nav-sidebar ul {
@@ -441,48 +578,6 @@ h2 {
     /* Retirar as bullets da lista */
     list-style: none;
     margin: 8px 0;
-}
-
-/* Barra lateral */
-
-@media only screen and (min-width: 992px) {
-    .sideBar {
-        /* Diminuir o tamanho quando esta colapsada */
-        position: fixed;
-        z-index: 99999;
-        width: 78px;
-        background-color: var(--CorBranco);
-        transition: all 0.5s ease;
-        height: 100%;
-    }
-    .sideBar.noCollapse {
-        /* Aumentar o tamanho quando não está colapsada */
-        position: fixed;
-        width: 250px;
-        overflow-y: scroll !important;
-        overflow-x: hidden;
-        max-height: 99%;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .sideBar {
-        /* Diminuir o tamanho quando esta colapsada */
-        position: fixed;
-        z-index: 1;
-        width: 39px;
-        background-color: var(--CorBranco);
-        transition: all 0.5s ease;
-        height: 100%;
-    }
-    .sideBar.noCollapse {
-        /* Aumentar o tamanho quando não está colapsada */
-        position: fixed;
-        width: 250px;
-        overflow-y: scroll !important;
-        overflow-x: hidden;
-        max-height: 80%;
-    }
 }
 
 /* --- */
@@ -700,6 +795,7 @@ h2 {
 /* Configurações da Foto de Perfil */
 
 .sideBar.noCollapse .profile .profile-picture .profile-switchImg .profile-myPhoto {
+    /* Remover o filtro da foto de perfil */
     filter: grayscale(0%);
     transition: 0.5s;
 }
@@ -745,22 +841,6 @@ h2 {
 /* --- */
 
 /* CONFIGURAÇÕES DA SEÇÃO DE INFORMAÇÕES */
-
-@media only screen and (max-width: 991px) {
-    .bg_background {
-        /* Background da parte das informações */
-        background-color: var(--CorCinza);
-        height: auto;
-        padding-top: 8px;
-    }
-}
-
-.bg_background {
-    /* Background da parte das informações */
-    background-color: var(--CorCinza);
-    height: auto;
-    padding-top: 12px;
-}
 
 .bg-d-profile {
     /* Background Dashboard Profile */
@@ -831,7 +911,15 @@ h2 {
 
 /* SEÇÃO DASHBOARD ITENS */
 
+.dashboard_items2 ul li {
+    /* Configurações da segunda seção da pagina de Dashboard */
+    border: none;
+    background-color: transparent;
+    padding-left: 0px;
+}
+
 .dashboard_items ul li {
+    /* Configurações da primeira seção da pagina de Dashboard */
     border: none;
     background-color: transparent;
     padding-left: 0px;
@@ -870,17 +958,6 @@ h2 {
 
 /* SEÇÃO DA PAGINA DE PERFIL */
 
-.bg_sections {
-    /* Background da pagina de Perfil */
-    background-color: var(--Corfff);
-    padding: var(--Padding16px) var(--Padding16px) 0px var(--Padding16px);
-    border-radius: 4px;
-    height: 75vh;
-    /* max-height: 80vh; */
-    overflow-y: auto;
-    margin-bottom: 12px;
-}
-
 .bg_sections .form-label {
     /* Modificar os labels dos formularios da pagina de perfil */
     color: var(--CorCinzaEscuro);
@@ -918,6 +995,18 @@ h2 {
 
 /* SEÇÃO DAS PAGINAS */
 
+.bg_sections {
+    /* Background da pagina de Perfil */
+    background-color: var(--Corfff);
+    padding: var(--Padding16px) var(--Padding16px) 0px var(--Padding16px);
+    border-radius: 4px;
+    height: 75vh;
+    /* max-height: 80vh; */
+    overflow-y: auto;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
 .bg_Items {
     /* Background Geral dos itens */
     background-color: var(--Corfff);
@@ -953,20 +1042,23 @@ h2 {
 }
 
 /* Configuração unica da seção de anunciar */
+
 .announce-weight::after {
+    /* Adicionar kg no final do input de peso na seção de Anunciar */
     content: "kg";
     color: var(--CorPreto);
 }
 
 /* Lista de Itens dos menus de Criar */
 
-.bg_Items ul{
+.bg_Items ul {
+    /* Criar uma lista com 3 colunas */
     columns: 3;
     -webkit-columns: 3;
     -moz-columns: 3;
 }
 
-.bg_Items ul li{
+.bg_Items ul li {
+    /* Adicionar um padding para a direita na lista */
     padding-right: 160px;
 }
-

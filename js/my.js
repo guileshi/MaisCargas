@@ -5,15 +5,24 @@ let pc = window.matchMedia('(min-width: 992px)');
 $(function () {
     $('.toggler-icon').click(function () {
         $('.sideBar').toggleClass('noCollapse')
-        $('#rotate-toggler').toggleClass('rotate noRotate')
+        $('#bars-icon').toggleClass('hide unHide')
+        $('#close-icon').toggleClass('hide unHide')
     })
 })
 
 $(function () {
     $('.main-content').click(function () {
         $('.sideBar').removeClass('noCollapse')
-        $('#rotate-toggler').removeClass('rotate')
-        $('#rotate-toggler').addClass('noRotate')
+
+        if($('#bars-icon').hasClass('hide')){
+            $('#bars-icon').removeClass('hide')
+            $('#bars-icon').addClass('unHide')
+        }
+
+        if($('#close-icon').hasClass('unHide')){
+            $('#close-icon').removeClass('unHide')
+            $('#close-icon').addClass('hide')
+        }
     })
 })
 
